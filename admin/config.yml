@@ -1,4 +1,3 @@
----
 backend:
   name: github
   repo: brob/jekyll-portfolio
