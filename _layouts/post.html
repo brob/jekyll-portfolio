@@ -1,14 +1,19 @@
 {% include header.html %}
 {% include interior-content-head.html %}
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a6f5f061c5d590013b4dfda&product=inline-share-buttons"></script>
+
+
 
     <main class="container page-indent {{ page.baseLayout }}">
+        <div class="sharethis-inline-share-buttons"></div>
+
         {{ content | markdownify }}
         {% unless page.comments == "off" %}
 
         <aside class="promo-ad">
             <h4 class="promo-ad__title">Learn New CSS Today</h4>
-            <p class="promo-ad__content">lorem ipsum dolor amet sum</p>
-            <a href="http://newcss.today" class="promo-ad__cta btn">Get Started</a>
+            <p class="promo-ad__content">I'm opening the gates for personalized CSS education for designers, developers and teams. If you want to jump on the great advancements CSS is making, I'm happy to give your team a custom workshop, give you a 1-on-1 session or give your code a review.</p>
+            <a href="http://newcss.today" class="promo-ad__cta site-nav__promo">Book your session today</a>
         </aside>
 
         <aside class="comments">
