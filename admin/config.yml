@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: brob/jekyll-portfolio
+  branch: netlify-cms # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: "images" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "string", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Featured Image", name: "featuredImg", widget: "image", required: false}
+      - {label: "Featured Large", name: "featuredLarge", widget: "boolean", required: false}
+      - {label: "Base Layout", name: "baseLayout", widget: "string", required: false, default: "container--right"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Grid Size", name: "grid-size", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "experiments" # Used in routes, e.g., /admin/collections/blog
+    label: "Experiments" # Used in the UI
+    folder: "_experiments" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "string", default: "interior"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Grid Size", name: "grid-size", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "category"
+    label: "Blog Categories"
+    folder: "_category"
+    create: true
+    slug: {{slug}}
+    fields:
+      - {label: "Category Name", name: "title", widget: "string"}
+      - {label: "Post List", name: "post_list", widget: "string"}
+      - {name: "layout", widget: "hidden", default: "category"}
+      - {name: "comments", widget: "hidden", default: "off"}
+      - {name: "baseLayout", widget: "hidden", default: "container--right"}
