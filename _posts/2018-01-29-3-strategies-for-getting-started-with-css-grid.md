@@ -83,7 +83,7 @@ While you're simplifying your markup, you might as well take a look at upping yo
 
 Sure a one-column form will get the job done, but why not add a little spice with multiple columns. 
 
-img
+![A simple form with both 2-column elements and 1-column full width elements](/images/2-column-form.jpg)
 
 Instead of setting up rows of content inside of a form, tell the form to be two columns and let certain areas stretch.
 
@@ -106,4 +106,43 @@ By creating a "fullwidth" class that uses grid-column: span 2, we can have a sin
 
 ## **Use Grid Layout instead of the Bootstrap or Foundation Grid**
 
+I try to write a lot about Grid Layout bringing new design options to the table, but sometimes it's worthwhile to use tested methods.
+
+If you want to take a baby step into Grid, try recreating your 12-column Bootstrap or Foundation grid.
+
+Start with a simple grid declaration and setup.
+
+{% highlight css %}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 10px;
+}
+{% endhighlight %}
+
+From there, you can set up classes that span various column counts.
+
+{% highlight css %}
+.span3 {
+    grid-column: span 3;
+}
+.span9 {
+    grid-column: span 9;
+}
+{% endhighlight %}
+
+I bet you can figure out the rest.
+
+If you're looking to get started, this is an easy shift in your workflow. This isn't the best use of Grid. Start expanding your mindset to work outside of traditional ideas of what a grid is.
+
 ## **Bonus: Make a Responsive Grid with No Media Queries**
+
+One of the absolute coolest features in Grid layout is the combination of repeat() and minmax() functions.
+
+I wrote a blog post on [how to make a fluid grid of cards with no media queries](/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/). It's pretty slick.
+
+## Start Experimenting with Grid
+
+More than anything else, this represents a shift in the way we develop websites. It will require you playing and working in it.
+
+Whatever strategy you implement to learn Grid, start learning it.
