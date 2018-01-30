@@ -32,8 +32,6 @@ To make this happen, we have to introduce a slew of markup to add rows inside of
 {% highlight html %}
 
 <section class="flexgrid">
-
-```
 <div class="left-side">
     <div class="item">1</div>
 </div>
@@ -50,10 +48,7 @@ To make this happen, we have to introduce a slew of markup to add rows inside of
     </div>
 
 </div>
-```
-
 </section>
-
 {% endhighlight %}
 
 Keeping track of the nesting is a headache. It also fights against clean, semantic HTML. 
