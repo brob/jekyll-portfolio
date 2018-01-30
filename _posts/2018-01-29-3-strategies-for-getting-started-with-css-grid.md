@@ -77,8 +77,33 @@ The promise of Grid Layout is the promise of semantic markup and true separation
 
 [View my CodePen of the layouts side-by-side](https://codepen.io/brob/pen/GQRXMe?editors=0100)
 
-## **Use Grid Layout instead of the Bootstrap or Foundation Grid**
-
 ## **Build a Multi-Column Form**
+
+While you're simplifying your markup, you might as well take a look at upping your form game.
+
+Sure a one-column form will get the job done, but why not add a little spice with multiple columns. 
+
+img
+
+Instead of setting up rows of content inside of a form, tell the form to be two columns and let certain areas stretch.
+
+In this example, we want the street address and comment box to have more room for comfortable writing.
+
+By creating a "fullwidth" class that uses grid-column: span 2, we can have a single input change its layout. The other inputs that can be smaller remain side by side.
+
+{% highlight css %}
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.fullwidth {
+    grid-column: span 2;
+}
+{% endhighlight %}
+
+[View the example on CodePen](https://codepen.io/brob/pen/BYyrjw?editors=1100)
+
+## **Use Grid Layout instead of the Bootstrap or Foundation Grid**
 
 ## **Bonus: Make a Responsive Grid with No Media Queries**
