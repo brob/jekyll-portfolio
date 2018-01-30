@@ -5,10 +5,11 @@ categories:
   - development
   - grid
   - design
+featuredImg: /images/grid-comparison.jpg
 baseLayout: container--right
 description: >-
-  If you're wondering how to start with CSS Grid, here are three strategies for
-  adopting it into your workflow.
+  If you're wondering how to start working with CSS Grid, here are three
+  strategies for adopting it into your workflow.
 grid-size: large
 ---
 CSS Grid Layout has been in major browsers for a little less than a year now. Despite the excitement around it by people in the know, not everyone has jumped on board.
