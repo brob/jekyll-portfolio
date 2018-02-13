@@ -14,12 +14,15 @@ var gulp = require('gulp'),
 // gulp.task('default', ['sass', 'sass:watch']);
 
 gulp.task('img-opt', function() {
-    return gulp.src('_site/images/**/')
-      .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }]
-        }))
-       .pipe(gulp.dest('_site/images'))
+
+    if (gutil.env.BRANCH === 'master') {
+        return gulp.src('_site/images/**/')
+        .pipe(imagemin({
+                progressive: true,
+                svgoPlugins: [{ removeViewBox: false }]
+            }))
+        .pipe(gulp.dest('_site/images'))
+    }
 });
 
 
@@ -37,7 +40,7 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('build:jekyll', function() {
-    var shellCommand = 'jekyll build';
+    var shellCommand = 'bundle exec jekyll build';
 
     return gulp.src('')
         .pipe(run(shellCommand))
