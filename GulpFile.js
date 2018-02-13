@@ -16,6 +16,7 @@ var gulp = require('gulp'),
 gulp.task('img-opt', function() {
 
     if (gutil.env.BRANCH === 'master') {
+        console.log(gutil.env.BRANCH);
         return gulp.src('_site/images/**/')
         .pipe(imagemin({
                 progressive: true,
