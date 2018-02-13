@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 // gulp.task('default', ['sass', 'sass:watch']);
 
 gulp.task('img-opt', function() {
+    console.log("BRANCH is " + gutil.env.BRANCH);
 
     if (gutil.env.BRANCH === 'master') {
         console.log(gutil.env.BRANCH);
