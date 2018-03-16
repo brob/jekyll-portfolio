@@ -48,7 +48,7 @@ gulp.task('build:jekyll', function() {
 });
 
 gulp.task('serve:jekyll', function() {
-    var shellCommand = "jekyll serve";
+    var shellCommand = "bundle exec jekyll serve";
 
     return gulp.src('')
     .pipe(run(shellCommand))
