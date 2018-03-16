@@ -6,6 +6,7 @@ categories:
 - CSS
 layout: post-with-grid
 description: With the death of Lella Vignelli last week (Dec. 21, 2016), I read for the first time The Vignelli Canon. The layout of the pages inspired me. I knew that I wanted to give a quick update to some of my blog posts to mirror some of the design from that book -- a book that talks about grids, as well.
+updated: 15 May, 2017
 ---
 
 <div class="reference">
