@@ -9,21 +9,6 @@
 
         {{ content | markdownify }}
         {% unless page.comments == "off" %}
-        <style>
-            .promo-ad__posts {
-                display: grid;
-                grid-template-columns: 1fr 2fr 1fr;
-                grid-gap: 1rem;
-            }
-            .related-article {
-                border: 1px solid #ccc;
-                padding: 1rem;
-                font-size: .8rem;
-            }
-            .related-article h5 {
-                font-size: 1.2rem;
-            }
-        </style>
         <div class="promo-ad">
 
             <h4 class="promo-ad__title">You May Also Enjoy</h4> 
