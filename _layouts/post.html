@@ -9,12 +9,58 @@
 
         {{ content | markdownify }}
         {% unless page.comments == "off" %}
+        <style>
+            .promo-ad__posts {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                grid-gap: 1rem;
+            }
+            .related-article {
+                border: 1px solid #ccc;
+                padding: 1rem;
+                font-size: .8rem;
+            }
+            .related-article h5 {
+                font-size: 1.2rem;
+            }
+        </style>
+        <div class="promo-ad">
 
-        <aside class="promo-ad">
-            <h4 class="promo-ad__title">Learn New CSS Today</h4>
-            <p class="promo-ad__content">I'm opening the gates for personalized CSS education for designers, developers and teams. If you want to jump on the great advancements CSS is making, I'm happy to give your team a custom workshop, give you a 1-on-1 session or give your code a review.</p>
-            <a href="http://newcss.today" class="promo-ad__cta site-nav__promo">Book your session today</a>
-        </aside>
+            <h4 class="promo-ad__title">You May Also Enjoy</h4> 
+              
+            {% assign maxRelated = 3 %}
+            {% assign minCommonTags =  1 %}
+            {% assign maxRelatedCounter = 0 %}
+            <div class="promo-ad__posts">
+                {% for post in site.posts %}
+                
+                    {% assign sameTagCount = 0 %}
+                    {% assign commonTags = '' %}
+                
+                    {% for category in post.categories %}
+                    {% if post.url != page.url %}
+                        {% if page.categories contains category %}
+                        {% assign sameTagCount = sameTagCount | plus: 1 %}
+                        {% capture tagmarkup %} <span class="label label-default">{{ category }}</span> {% endcapture %}
+                        {% assign commonTags = commonTags | append: tagmarkup %}
+                        {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                
+                    {% if sameTagCount >= minCommonTags %}
+                        <div class="related-article">
+                            <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a></h5>
+                            <p>{{ post.description }}</p>
+                        </div>
+                    {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+                    {% if maxRelatedCounter >= maxRelated %}
+                        {% break %}
+                    {% endif %}
+                    {% endif %}
+                
+                {% endfor %}
+            </div>
+        </div>
 
         <aside class="comments">
             <div id="disqus_thread"></div>

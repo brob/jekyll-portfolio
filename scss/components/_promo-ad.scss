@@ -1,9 +1,10 @@
 .promo-ad {
-    grid-column-start: 2;
+    grid-column-start: 1;
     padding: 30px 0;
-    transform: rotate(-1deg) translateX(-50px) translateY(-20px);
+    transform: rotate(-2deg) skew(-2deg);
     @media (max-width: 600px) {
         transform: none;
+        display: block;
     }
 
     &__title {
@@ -21,5 +22,29 @@
     }
     &__cta {
 
+    }
+    .promo-ad__posts {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 1rem;
+        @media (max-width: 700px) {
+            display: block;
+        }
+    }
+    .related-article {
+        border: 1px solid #ccc;
+        padding: 1rem;
+        font-size: .8rem;
+        margin-bottom: 1rem; // default stacking context overriden by grid support
+        @supports (display: grid) {
+            margin-bottom: 0;
+        }
+        @media (max-width: 700px) {
+            margin-bottom: 1rem;
+        }
+
+    }
+    .related-article h5 {
+        font-size: 1.2rem;
     }
 }
