@@ -31,7 +31,7 @@ em {
     @include primary-font($style: italic);
 }
 strong {
-    @include primary-font($style: bold, $weight: 400);
+    @include primary-font($style: bold, $weight: 700);
 }
 
 h2, h3, h4, h5, h6 {
@@ -56,4 +56,15 @@ h2 {
 }
 p {
     margin-bottom: 1rem;
+}
+
+blockquote {
+    border-left: 5px solid $color-accent;
+    padding: 1rem;
+    background-color: $color-neutral;
+    margin-bottom: 1rem;
+    p {
+        font-size: .9em;
+        margin: 0;
+    }
 }
