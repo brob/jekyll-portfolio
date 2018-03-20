@@ -6,6 +6,7 @@ categories:
   - design
   - CSS
 featuredImg: /images/modern-css-promo.png
+featuredLarge: true
 baseLayout: container--right
 description: Contrary to popular belief, CSS is an absolute delight. Many developers I talk to think the phrase "Modern CSS" is an oxymoron. If you haven’t been watching the growth and maturity of CSS in the past 5 years, you’re doing yourself a disservice. 
 grid-size: large
