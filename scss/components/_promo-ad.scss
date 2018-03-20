@@ -32,7 +32,7 @@
         }
     }
     .related-article {
-        border: 1px solid #ccc;
+        border: 1px solid $color-light-gray;
         padding: 1rem;
         font-size: .8rem;
         margin-bottom: 1rem; // default stacking context overriden by grid support
