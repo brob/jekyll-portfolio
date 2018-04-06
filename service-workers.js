@@ -1,3 +1,6 @@
+// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+// http://creativecommons.org/publicdomain/zero/1.0/
+
 // HTML files: try the network first, then the cache.
 // Other files: try the cache first, then the network.
 // Both: cache a fresh version if possible.

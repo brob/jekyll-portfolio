@@ -79,6 +79,8 @@
 }
 </script>
 {% endif %}
-
+<script>
+    if (navigator.serviceWorker && !navigator.serviceWorker.controller) { navigator.serviceWorker.register('/service-workers.js'); }
+</script>
 </body>
 </html>
