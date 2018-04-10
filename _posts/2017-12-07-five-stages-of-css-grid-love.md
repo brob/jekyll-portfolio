@@ -6,10 +6,11 @@ categories:
 - CSS
 layout: post
 description: Looking back on the past year, I've identified the five stages of my love with the CSS Grid Specification.
-featuredImg: images/blog/fall-forward/full-grid.png
+featuredImg: images/grid-love-featured.jpg
 featuredLarge: True
 baseLayout: container--right
 ---
+<figure style="grid-column: 1 / 3; grid-row: 1 / 8;"><img src="/images/grid-love.jpg" alt="Grid Love"></figure>
 
 December represents the month the I first fell in love with the CSS Grid specification. I redesigned my blog to use CSS Grid in December 2016 (before Grid was in browsers). Looking back on the past year, I've identified the five stages of my love with this specification.
 
