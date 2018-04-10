@@ -6,7 +6,7 @@ categories:
 - CSS
 layout: post
 description: Looking back on the past year, I've identified the five stages of my love with the CSS Grid Specification.
-featuredImg: images/grid-love-featured.jpg
+featuredImg: /images/grid-love-featured.jpg
 featuredLarge: True
 baseLayout: container--right
 ---
