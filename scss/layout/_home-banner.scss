@@ -19,6 +19,9 @@
         flex-direction: column;
         margin: auto;
         padding: $spacing $spacing*2;
+        .secondary-headline {
+            font-size: 1.2rem;
+        }
         p {
             font-size: .8rem;
             line-height: 1.75em;
