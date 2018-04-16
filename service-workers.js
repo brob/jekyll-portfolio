@@ -19,6 +19,7 @@ const offlinePages = [
     '/experiments/',
     '/speaking/',
     '/portfolio/',
+    '/offline/'
 ];
 
 function updateStaticCache() {
