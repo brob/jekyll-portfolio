@@ -307,3 +307,11 @@ pre.line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
+.highlighter-rouge {
+	background-color: $color-neutral;
+	color: $color-accent;
+	font-family: monospace;
+	font-size: .75em;
+	padding: 3px 7px;
+	border: 1px solid darken($color-neutral, 25%);
+}
