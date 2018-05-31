@@ -1,40 +1,14 @@
 <footer class="footer">
 
+    <h4 class="sides__header">My Side Projects</h4>
     <section class="sides">
-        <h4 class="sides__header">My Side Projects</h4>
         <a class="sides__item" href="http://memphiswebworkers.com"><img src="/images/sides/side-webworkers.png" alt="Web Workers Logo"></a>
         <a class="sides__item" href="http://tinyletter.com/code-contemporary"><img src="/images/sides/side-cc.png" alt="Web Workers Logo"></a>
         <a class="sides__item" href="http://memphistechnology.org"><img src="/images/sides/side-mtf.png" alt="Web Workers Logo"></a>
         <a class="sides__item" href="http://hackmemphis.com"><img src="/images/sides/side-hm.png" alt="Web Workers Logo"></a>
     </section>
 
-    <main class="footer-large">
-
-
-        <section class="footer__contact">
-            <h4>Get in Touch</h4>
-            <p>If you're interested in getting in touch with me, you can find me on <a href="http://twitter.com/brob/">Twitter as @brob</a> and on <a href="http://linkedin.com/in/bryanlrobinson/">LinkedIn</a>.</p>
-            <p>If social media isn't really your thing, you can fill out this quick form.</p>
-            <form netlify netlify-honeypot="bot_capture" name="footer-form" action="/thanks/">
-                <label for="full_name">Full Name *</label>
-                <input type="text" required name="full_name" id="full_name">
-
-                <label for="__replyto">Email Address *</label>
-                <input type="email" required name="__replyto" id="__replyto">
-
-                <label for="message">Message *</label>
-                <textarea id="message" required name="message" rows="4" cols="80"></textarea>
-                
-                <input type="hidden" name="page" id="page" value="{{ page.url }}">
-                <div style="display: none;">
-                    <label for="bot_capture">Don't fill this out</label><input name="bot_capture" type="text">
-                </div>
-                <input type="submit" value="Send Email">
-            </form>
-        </section>
-
-    </main>
-
+   
 
     <script type="text/javascript" src="/js/prism.js"></script>
 

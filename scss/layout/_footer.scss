@@ -1,22 +1,9 @@
 .footer {
     margin: 0 $spacing $spacing;
-    // background-color: $color-accent;
     border-top: 3px solid $color-accent;
     border-bottom: 3px solid $color-accent;
-
-
-
-
-    @media (min-width: 550px) {
-        display: grid;
-        align-items: start;
-    }
-    grid-template-columns: 35vw 1fr;
     padding: $spacing 0;
-
 }
-
-
 .sides {
     display: flex;
     margin-bottom: $spacing * 2;
@@ -24,13 +11,16 @@
     display: grid;
     align-items: start;
 
-
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: .5rem;
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr 1fr;
+    }
+   
     &__header {
         grid-column: span 2;
         text-align: center;
-        margin-bottom: 0;
+        margin-bottom: .5rem;
     }
     &__item {
         list-style: none;
