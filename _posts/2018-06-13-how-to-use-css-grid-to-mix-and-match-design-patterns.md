@@ -5,7 +5,7 @@ categories:
   - design
   - CSS
   - tutorial
-featuredImg: 
+featuredImg: /images/responsive-grid-break-design.jpg
 featuredLarge: true
 baseLayout: container--right
 description: In a previous tutorial, I described how to create a simple fluid card grid with CSS Grid. In this tutorial, we'll take it a step farther and create promotional spaces that morph in interesting ways.
