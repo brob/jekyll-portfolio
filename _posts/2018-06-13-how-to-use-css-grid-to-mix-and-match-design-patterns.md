@@ -12,7 +12,7 @@ description: In a previous tutorial, I described how to create a simple fluid ca
 grid-size: large
 ---
 
-In a previous tutorial, I described how to create a simple fluid card grid with CSS Grid. In this tutorial, we'll take it a step farther and create promotional spaces that morph in interesting ways.
+In a previous tutorial, I described [how to create a simple fluid card grid with CSS Grid](/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/). In this tutorial, we'll take it a step farther and create promotional spaces that morph in interesting ways.
 
 Using Grid, we'll gain the following advantages:
 
@@ -138,7 +138,7 @@ Align-self will allow the image to fill the entire grid cell. By allowing the im
 
 ## Add the Overlay with mix-blend-modes
 
-Normally, I'd advocate for an `::after` element in CSS to handle the darkened overlay. In this instance, because our main background is an `<img>` tag, an `::after` element won't work.
+Normally, [I'd advocate for an ::after element in CSS to handle the darkened overlay](/blog/2018/04/30/how-to-css-after-elements-for-background-overlays/). In this instance, because our main background is an `<img>` tag, an `::after` element won't work.
 
 To make this work, we can add a `background-color` to the entire promo area and use `mix-blend-mode` on the image to blend the two.
 
@@ -214,6 +214,6 @@ If you're anything like me, the images repeating down the right side bothers you
 }
 {% endhighlight %}
 
-With that, we have an interesting set of design patterns that best match the device on which they're viewed.
+With that, we have an interesting set of design patterns that best match the device on which they're viewed. As always, [you can play with the code on CodePen](https://codepen.io/brob/pen/dKWdVB?editors=1000).
 
 What are some other design patterns that would work well together with the power of Grid?
