@@ -31,7 +31,13 @@ To do this, we'll use: 
 
 ![Design on multiple screens](/images/responsive-grid-break-design.jpg)
 
-We'll be setting up three different designs for our promo space. On mobile, we'll have an image with a darkened overlay in the background and the text and button in the foreground. On larger screens -- tablets and landscape mobile phones -- we'll use the same promo design but have them two across. On devices bigger than tablets, we'll have a full row for each promo with the image beside the text and no overlay.
+We'll be setting up three different designs for our promo space. 
+
+On mobile, we'll have an image with a darkened overlay in the background and the text and button in the foreground. 
+
+On larger screens -- tablets and landscape mobile phones -- we'll use the same promo design but have them two across. 
+
+On devices bigger than tablets, we'll have a full row for each promo with the image beside the text and no overlay.
 
 ## The Markup
 
@@ -96,7 +102,9 @@ One quick note: by assigning `align-self: end` to our headline, we create a stro
 
 At this point, you may have noticed we haven't styled our `<img>`. 
 
-To make the image span the full height and width our container, we need to tell it to fill all the rows. We could use `grid-row: 1 / 6` but then we'd need to redefine this at various breakpoints. The current specification of Grid doesn't account for overlap in grid-template-areas. So, we'll create "named lines" instead by redefining our grid-template-columns/rows.
+To make the image span the full height and width our container, we need to tell it to fill all the rows. We could use `grid-row: 1 / 6` but then we'd need to redefine this at various breakpoints. 
+
+The current specification of Grid doesn't account for overlap in grid-template-areas. So, we'll create "named lines" instead by redefining our grid-template-columns/rows.
 
 {% highlight css %}
 
@@ -128,8 +136,6 @@ You'll note two other properties: `align-self` and `object-fit`.
 
 Align-self will allow the image to fill the entire grid cell. By allowing the image to stretch, it fills the space. Object-fit and the keyword `cover` allows an `<img>` tag to have the same functionality as `background-size: cover`.
 
-
-
 ## Add the Overlay with mix-blend-modes
 
 Normally, I'd advocate for an `::after` element in CSS to handle the darkened overlay. In this instance, because our main background is an `<img>` tag, an `::after` element won't work.
@@ -140,7 +146,9 @@ To avoid blending all the elements, we can add a z-index to affect our stacking 
 
 ## Add a breakpoint for Tablets and large phones
 
-This is the easy one. For larger phones and tablets, let's set a breakpoint to put our promos side-by-side. In this example, we have two, so we'll set our grid to two columns. If you have dynamic content, you could explore creating a fluid card grid.
+This is the easy one. For larger phones and tablets, let's set a breakpoint to put our promos side-by-side. 
+
+In this example, we have two, so we'll set our grid to two columns. If you have dynamic content, you could explore creating a fluid card grid.
 
 {% highlight css %}
 @media (min-width: 640px) and (max-width: 1024px) {
@@ -172,7 +180,9 @@ Since we named our grid areas, they'll automatically flow into their new homes.
 
 Our grid now in place and things are looking let's make a few stylistic choices to solidify this design.
 
-Let's add a little white space on either side of our promos by setting a width and auto margins. We'll reset our font color and background color for the promos to something that make sense for the space it takes up and align the text left instead of center.
+Let's add a little white space on either side of our promos by setting a width and auto margins. 
+
+We'll also reset our font color and background color for the promos to something that make sense for the space it takes up and align the text left instead of center.
 
 {% highlight css %}
     .promos {
