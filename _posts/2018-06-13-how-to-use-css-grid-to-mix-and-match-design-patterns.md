@@ -98,7 +98,7 @@ In this declaration, each row is represented by one string with columns separate
 
 One quick note: by assigning `align-self: end` to our headline, we create a stronger tie between headline and text.
 
-## Converting the <img> into a background
+## Converting the image into a background
 
 At this point, you may have noticed we haven't styled our `<img>`. 
 
@@ -160,6 +160,10 @@ In this example, we have two, so we'll set our grid to two columns. If you have 
 }
 {% endhighlight %}
 
+<figure class="reference" style="grid-row: span 4;">
+    <img src="/images/responsive-just-desktop.jpg">
+</figure>
+
 ## Now for the fun: Desktop reconfiguration
 
 Tablets were easy, add an extra column. Done. For desktop, let's create a row for each promo and let them breathe a bit.
@@ -167,13 +171,13 @@ Tablets were easy, add an extra column. Done. For desktop, let's create a row fo
 To build our new grid template, all we need to do is add a column and adjust our grid-template-areas.
 
 {% highlight css %}
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: '.......  image'
-                             'headline image'
-                             '  text   image'
-                             ' button  image'
-                             '.......  image';
-        grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: '.......  image'
+                         'headline image'
+                         '  text   image'
+                         ' button  image'
+                         '.......  image';
+    grid-column-gap: 20px;
 {% endhighlight %}
 
 Since we named our grid areas, they'll automatically flow into their new homes.
