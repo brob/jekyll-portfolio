@@ -94,7 +94,7 @@ The five rows allow for us to vertically center our content. The first and last 
 
 Finally, we tell the browser where to put our content by assigning a grid area name in `grid-template-areas`. We then assign `headline`, `text`, and `button` keywords to the classes of content that match. 
 
-In this declaration, each row is represented by one string with columns separated by spaces. In this case, there's only one column and five rows. The first and the last rows are represented with a `.`. This allows for these grid cells to be blank. 
+In this declaration, each row is represented by one string with columns separated by spaces. In this case, there's only one column and five rows. The first and the last rows are represented with one or more periods. This allows for these grid cells to be blank. 
 
 One quick note: by assigning `align-self: end` to our headline, we create a stronger tie between headline and text.
 
