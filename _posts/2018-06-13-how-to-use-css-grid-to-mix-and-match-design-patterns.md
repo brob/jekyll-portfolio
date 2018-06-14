@@ -5,6 +5,7 @@ categories:
   - design
   - CSS
   - tutorial
+  - Grid
 featuredImg: /images/responsive-grid-break-design.jpg
 featuredLarge: true
 baseLayout: container--right

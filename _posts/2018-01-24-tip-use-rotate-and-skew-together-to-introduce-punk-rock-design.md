@@ -2,7 +2,6 @@
 title: CSS Tip&#58; Use rotate() and skew() together to introduce some clean punk rock to your CSS
 categories:
 - Development
-- Grid
 - CSS
 layout: post
 description: I'm still convinced that taking inspiration from punk rock design of the 70s and 80s is going to be a trend. If you want to start small, introduce some angles to your design. This is a simple trick to angle a stripe of content without adding awkward white space.

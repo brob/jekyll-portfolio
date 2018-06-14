@@ -136,9 +136,18 @@ Grid-gap will place a space between the tracks of our grid (columns and rows). T
 }
 {% endhighlight %}
 
+
 And voila! A fluid, responsive grid created with no breakpoints.
 
+ 
 Below is the [CodePen](https://codepen.io/brob/pen/MvwbMa?editors=1100) that contains this example in its entirety. If you have any questions, post them in the comments or feel free to contact me [on Twitter](http://twitter.com/brob/). If you're interest in implementing Grid and still supporting older browsers, [take a look at this post](/blog/2017/01/18/your-code-should-fall-forward/).
 
 <p data-height="500" data-theme-id="26704" data-slug-hash="MvwbMa" data-default-tab="result" data-user="brob" data-embed-version="2" data-pen-title="MvwbMa" class="codepen">See the Pen <a href="https://codepen.io/brob/pen/MvwbMa/">MvwbMa</a> by Bryan Robinson (<a href="https://codepen.io/brob">@brob</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+### Next Up: [Learn how to mix and match design patterns for each screen size](/blog/2018/06/13/how-to-use-css-grid-to-mix-and-match-design-patterns/)
+![Various design patterns per screen size using grid](/images/responsive-grid-break-design.jpg)
+
+See the power of grid in creating different layouts for different screen sizes with the simplest media queries.
+
+[See it in action &raquo;](/blog/2018/06/13/how-to-use-css-grid-to-mix-and-match-design-patterns/)
