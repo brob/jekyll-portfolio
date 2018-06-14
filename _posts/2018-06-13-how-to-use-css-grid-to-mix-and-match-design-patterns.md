@@ -138,6 +138,10 @@ Align-self will allow the image to fill the entire grid cell. By allowing the im
 
 ## Add the overlay with mix-blend-modes
 
+<figure class="reference" style="grid-row: span 5; justify-self: end;">
+    <img src="/images/mobile-responsive-grid.jpg" alt="The mobile design">
+</figure>
+
 Normally, [I'd advocate for an ::after element in CSS to handle the darkened overlay](/blog/2018/04/30/how-to-css-after-elements-for-background-overlays/). In this instance, because our main background is an `<img>` tag, an `::after` element won't work.
 
 To address this, we can add a `background-color` to the entire promo area and use `mix-blend-mode` on the image to blend the two.
