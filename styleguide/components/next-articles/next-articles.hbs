@@ -4,10 +4,7 @@
     <div class="promo-ad__posts">
 
         {{#each articles}}
-        <div class="related-article">
-            <h5><a href="#">{{ this.title }}</a></h5>
-            <p>{{ this.description }}</p>
-        </div>
+            {{> @article-promo }}
         {{/each}}
     </div>
 </div>
