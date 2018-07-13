@@ -1,0 +1,13 @@
+<div class="promo-ad">
+
+    <h4 class="promo-ad__title">You May Also Enjoy</h4> 
+    <div class="promo-ad__posts">
+
+        {{#each articles}}
+        <div class="related-article">
+            <h5><a href="#">{{ this.title }}</a></h5>
+            <p>{{ this.description }}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>

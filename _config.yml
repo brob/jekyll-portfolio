@@ -42,3 +42,4 @@ exclude:
 - Gruntfile.js
 - Gruntfile.coffee
 - node_modules
+- styleguide

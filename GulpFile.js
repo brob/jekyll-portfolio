@@ -2,6 +2,8 @@
 
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    fractal = require('./styleguide/fractal.js'),
+    logger = fractal.cli.console,
     imagemin = require('gulp-imagemin'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
@@ -31,12 +33,24 @@ gulp.task('sass', function() {
        .pipe(sass().on('error', sass.logError))
        .pipe(autoprefixer({grid: false}))
        .pipe(cleanCSS())
-       .pipe(gulp.dest('./'))
+       .pipe(gulp.dest('./')
+       .pipe(gulp.dest('./styleguide/public/css/'))
+    )
 });
 
 
 gulp.task('sass:watch', function () {
-    gulp.watch(['scss/**/*.scss', 'scss/*.scss'], ['sass']);
+    gulp.watch(['scss/**/*.scss', 'scss/*.scss', 'styleguide/components/**/*.scss','styleguide/*.scss'], ['sass']);
+});
+
+gulp.task('fractal:start', function(){
+    const server = fractal.web.server({
+        sync: true
+    });
+    server.on('error', err => logger.error(err.message));
+    return server.start().then(() => {
+        logger.success(`Fractal server is now running at ${server.url}`);
+    });
 });
 
 gulp.task('build:jekyll', function() {
@@ -57,6 +71,10 @@ gulp.task('serve:jekyll', function() {
 
 gulp.task('default', function(callback) {
     runSequence('sass:watch', 'serve:jekyll', callback);
+});
+
+gulp.task('style', function(callback) {
+    runSequence('fractal:start', 'sass:watch', callback);
 });
 
 gulp.task('build', function(callback) {
