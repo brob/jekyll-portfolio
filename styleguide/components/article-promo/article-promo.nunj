@@ -1,0 +1,4 @@
+<div class="related-article">
+    <h5><a href="#">{{ title }}</a></h5>
+    <p>{{ description }}</p>
+</div>
