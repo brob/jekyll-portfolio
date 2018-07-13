@@ -19,6 +19,8 @@ fractal.set('project.title', 'Styleguide');
  * Tell Fractal where to look for components.
  */
 fractal.components.set('path', path.join(__dirname, 'components'));
+fractal.components.engine('@frctl/nunjucks'); // register the Nunjucks adapter for your components
+fractal.components.set('ext', '.nunj'); // look for files with a .nunj file extension
 fractal.components.set('default.preview', '@preview');
 
 /*

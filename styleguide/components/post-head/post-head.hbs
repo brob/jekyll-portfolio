@@ -1,8 +1,0 @@
-<header class="post-head">
-        <h1 class="post-head__head">{{ title }}</h1>
-        {{#if subhead }}<h2 class="post-head__subhead">{{ subhead }}</h2>{{/if}}
-        {{#if is_post }}
-            {{#if date }}<h6 class="post-head__meta post-meta">Posted on {{ date }}</h6>{{/if}}
-            {{#if categories }}Posted in {{# each categories }}<a href="/category/{{ this }}/">{{ this }}</a>,{{/each}}{{/if}}
-        {{/if}}
-</header>
