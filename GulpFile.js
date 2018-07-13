@@ -82,8 +82,11 @@ gulp.task('default', function(callback) {
     runSequence('sass:watch', 'serve:jekyll', callback);
 });
 
-gulp.task('style', function(callback) {
+gulp.task('style:watch', function(callback) {
     runSequence('fractal:start', 'sass:watch', callback);
+});
+gulp.task('style:build', function(callback) {
+    runSequence('sass', 'fractal:build', callback);
 });
 
 gulp.task('build', function(callback) {

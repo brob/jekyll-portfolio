@@ -43,3 +43,4 @@ exclude:
 - Gruntfile.coffee
 - node_modules
 - styleguide
+- styles
