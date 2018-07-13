@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     run = require('gulp-run'),
     runSequence = require('run-sequence'),
     gutil = require('gulp-util');
+    fractal.web.set('builder.dest', 'styles'); // destination for the static export
 
 
 // gulp.task('default', ['sass', 'sass:watch']);
@@ -50,6 +51,15 @@ gulp.task('fractal:start', function(){
     server.on('error', err => logger.error(err.message));
     return server.start().then(() => {
         logger.success(`Fractal server is now running at ${server.url}`);
+    });
+});
+
+gulp.task('fractal:build', function(){
+    const builder = fractal.web.builder();
+    builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
+    builder.on('error', err => logger.error(err.message));
+    return builder.build().then(() => {
+        logger.success('Fractal build completed!');
     });
 });
 
