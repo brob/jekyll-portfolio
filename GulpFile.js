@@ -79,16 +79,21 @@ gulp.task('serve:jekyll', function() {
 });
 
 gulp.task('default', function(callback) {
-    runSequence('sass:watch', 'serve:jekyll', callback);
+    runSequence('sass:watch', 'fractal:start', 'serve:jekyll', callback);
 });
 
+// For just working on styleguide and not running jekyll server
 gulp.task('style:watch', function(callback) {
     runSequence('fractal:start', 'sass:watch', callback);
 });
+
+// For just building styleguide. 
+// This is the build command for the style-guide branch deploy on netlify 
 gulp.task('style:build', function(callback) {
     runSequence('sass', 'fractal:build', callback);
 });
 
+// Master branch deploy builder
 gulp.task('build', function(callback) {
-    runSequence('sass', 'fractal:build', 'build:jekyll', 'img-opt');
+    runSequence('sass', 'build:jekyll', 'img-opt');
 });
