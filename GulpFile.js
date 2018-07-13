@@ -34,9 +34,8 @@ gulp.task('sass', function() {
        .pipe(sass().on('error', sass.logError))
        .pipe(autoprefixer({grid: false}))
        .pipe(cleanCSS())
-       .pipe(gulp.dest('./')
        .pipe(gulp.dest('./styleguide/public/css/'))
-    )
+       .pipe(gulp.dest('./'))
 });
 
 
