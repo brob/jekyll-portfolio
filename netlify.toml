@@ -1,0 +1,5 @@
+# This runs a different command for the style-guide branch
+# style-guide branch controls a live style guide at a subdomain
+[context.style-guide]
+  publish = "styles"
+  command = "gulp style:build"

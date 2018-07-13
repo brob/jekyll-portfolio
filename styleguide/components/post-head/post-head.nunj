@@ -1,0 +1,8 @@
+<header class="post-head">
+        <h1 class="post-head__head">{{ title }}</h1>
+        {% if subhead %}<h2 class="post-head__subhead">{{ subhead }}</h2>{% endif %}
+        {% if is_post %}
+            {% if date %}<h6 class="post-head__meta post-meta">Posted on {{ date }}</h6>{% endif %}
+            {% if categories %}Posted in {% for category in categories %}<a href="/category/{{ category }}/">{{ category }}</a>,{% endfor %}{% endif %}
+        {% endif %}
+</header>

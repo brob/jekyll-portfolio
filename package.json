@@ -5,16 +5,18 @@
     "node": "^5.10.1"
   },
   "dependencies": {
-    "surge": "^0.18",
+    "@frctl/fractal": "^1.1.7",
+    "@frctl/nunjucks": "^1.0.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-watch": "^4.3.9",
     "gulp-clean-css": "^2.3.2",
     "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
     "gulp-run": "^1.7.1",
-    "run-sequence": "^1.2.2"
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.9",
+    "run-sequence": "^1.2.2",
+    "surge": "^0.18"
   },
   "devDependencies": {}
 }
