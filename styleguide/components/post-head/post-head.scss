@@ -1,0 +1,19 @@
+.post-head {
+    text-align: right;
+    margin: -$spacing $spacing $spacing;
+    padding: $spacing;
+    border-bottom: 3px solid $color-accent;
+    background-image: linear-gradient(to right, transparent, transparentize($color-light, .7));
+
+    &__head {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+    &__subhead {
+        margin: 0;
+    }
+    &__meta {
+        font-size: 1rem;
+        margin: 0;
+    }
+}

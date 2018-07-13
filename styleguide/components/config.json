@@ -1,0 +1,26 @@
+{
+    "context": {
+        "articles": [
+            {
+                "title": "Use CSS Grid to Mix and Match Design Patterns",
+                "description": "In a previous tutorial, I described how to create a simple fluid card grid with CSS Grid. In this tutorial, we'll take it a step farther and create promotional spaces that morph in interesting ways."
+            },
+            {
+                "title": "How To: Use CSS :after pseudo-elements to create simple overlays",
+                "description": "Use :after elements to create the simplest HTML possible to render useful and fun overlays on top of background images. Then extend them with blend-modes!"
+            },
+            {
+                "title": "Modern CSS: Four Things Every Developer and Designer Should Know About CSS",
+                "description": "Contrary to popular belief, CSS is an absolute delight. Many developers I talk to think the phrase Modern CSS is an oxymoron. If you haven’t been watching the growth and maturity of CSS in the past 5 years, you’re doing yourself a disservice."
+            },
+            {
+                "title": "3 Strategies for Getting Started with CSS Grid",
+                "description": "If you're wondering how to start working with CSS Grid, here are three strategies for adopting it into your workflow."
+            },
+            {
+                "title": "CSS Tip: Use rotate() and skew() together to introduce some clean punk rock to your CSS",
+                "description": "I'm still convinced that taking inspiration from punk rock design of the 70s and 80s is going to be a trend. If you want to start small, introduce some angles to your design. This is a simple trick to angle a stripe of content without adding awkward white space."
+            }
+        ]
+    }
+  }
