@@ -88,5 +88,5 @@ gulp.task('style', function(callback) {
 });
 
 gulp.task('build', function(callback) {
-    runSequence('sass', 'build:jekyll', 'img-opt');
+    runSequence('sass', 'fractal:build', 'build:jekyll', 'img-opt');
 });
