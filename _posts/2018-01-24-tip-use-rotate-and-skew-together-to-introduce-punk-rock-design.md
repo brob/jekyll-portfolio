@@ -9,6 +9,7 @@ featuredImg: images/uploads/rotate_skew_unskew.jpg
 featuredLarge: True
 baseLayout: container--right
 updated: 26 Jan, 2018
+featured: true
 ---
 
 In 2018, the web design industry is going to start looking very different. Literally.
