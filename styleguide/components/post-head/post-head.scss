@@ -1,12 +1,18 @@
 .post-head {
-    text-align: right;
+    text-align: center;
     margin: -$spacing $spacing $spacing;
     padding: $spacing;
     border-bottom: 3px solid $color-accent;
-    background-image: linear-gradient(to right, transparent, transparentize($color-light, .7));
+    // background-image: linear-gradient(to right, transparent, transparentize($color-light, .7));
 
+    &--article {
+        // background-image: linear-gradient(120deg,#eaee44,#33d0ff);
+        padding: $spacing * 5 $spacing;
+        border-bottom: 0;
+    }
     &__head {
         font-size: 2rem;
+        font-weight: 700;
         margin-bottom: 0;
     }
     &__subhead {

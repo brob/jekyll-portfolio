@@ -1,4 +1,4 @@
-<header class="post-head">
+<header class="post-head post-head--{{ modifier }}">
         <h1 class="post-head__head">{{ title }}</h1>
         {% if subhead %}<h2 class="post-head__subhead">{{ subhead }}</h2>{% endif %}
         {% if is_post %}
