@@ -1,0 +1,22 @@
+.article {
+    display: grid;
+    grid-template-columns: [full-start] minmax(300px, 1fr) [article-start] 1.2fr 1.2fr [article-end]  minmax(300px, 1fr) [full-end];
+    > * {
+        grid-column: article;
+    }
+    &__reference, .reference {
+        grid-column: 1;
+        @media (max-width: 950px) {
+            grid-column: article;
+        }
+        @for $i from 1 through 10 {
+            &--row#{$i} {
+                grid-row: span $i;
+            }
+        }
+
+    }
+    @media (max-width: 950px) {
+        grid-template-columns: [full-start] .75rem [article-start] 1fr 1fr [article-end] .75rem [full-end];
+    }
+}
