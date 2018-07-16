@@ -1,0 +1,199 @@
+<main class="article">
+
+<p>In a previous tutorial, I described <a href="/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/">how to create a simple fluid card grid with CSS Grid</a>. In this tutorial, we’ll take it a step further and create promotional spaces that morph in interesting ways.</p>
+
+<p>Using Grid, we’ll gain the following advantages:</p>
+
+<ul>
+  <li>Semantic, un-nested HTML</li>
+  <li>Images as actual accessible content and not background images</li>
+  <li>Mobile-first design with simple breakpoint changes</li>
+  <li>Different design patterns that match the advantages of the device used</li>
+</ul>
+
+<p>To do this, we’ll use: </p>
+
+<ul>
+  <li>Well-formed HTML</li>
+  <li>Grid’s ease of overlap</li>
+  <li>Named Grid Lines and Named Grid Areas</li>
+</ul>
+
+<h2 id="the-design">The design</h2>
+
+<p><img src="/assets/images/responsive-grid-break-design.jpg" alt="Design on multiple screens" /></p>
+
+<p>We’ll be setting up three different designs for our promo space.</p>
+
+<p>On mobile, we’ll have an image with a darkened overlay in the background and the text and button in the foreground.</p>
+
+<p>On larger screens – tablets and landscape mobile phones – we’ll use the same promo design but have them two across.</p>
+
+<p>On devices bigger than tablets, we’ll have a full row for each promo with the image beside the text and no overlay.</p>
+
+<h2 id="the-markup">The markup</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"promos"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"promo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"promo__headline"</span><span class="nt">&gt;</span>This is a headline for a promo space<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"promo__image"</span> <span class="na">src=</span><span class="s">"https://images.unsplash.com/photo-1521379770009-7bafd3ec7a23?ixlib=rb-0.3.5&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=ce4848266618366ad30d7d35764c0bf4"</span> <span class="na">alt=</span><span class="s">"Ocean Scape"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"promo__text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac arcu mollis, semper est ac, tincidunt purus. Cras efficitur maximus augue vitae volutpat. Nullam consectetur diam a dictum facilisis. <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"promo__button"</span><span class="nt">&gt;</span>Learn More <span class="ni">&amp;raquo;</span><span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"promo"</span><span class="nt">&gt;</span>
+    ... etc
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>Sweet and simple. One parent container for the promos and one child container per promo. Inside that, we’ve got our content. A <code class="highlighter-rouge">h2/3/4</code>, <code class="highlighter-rouge">p</code>, <code class="highlighter-rouge">a</code> and an <code class="highlighter-rouge">img</code>. That’s right, we’re using an <code class="highlighter-rouge">&lt;img&gt;</code> tag for a background image. </p>
+
+<p>If you consider your image to be part of your content and not there for ambiance, then using an <code class="highlighter-rouge">&lt;img&gt;</code> tag is the proper, semantic way to write it. We’ll see in the next section how we make it appear to be a background image.</p>
+
+<h2 id="crafting-our-initial-grid">Crafting our initial grid</h2>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.promo</span> <span class="p">{</span>
+<span class="err">    </span><span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+<span class="err">    </span><span class="py">grid-template-rows</span><span class="p">:</span> <span class="m">10vh</span> <span class="nb">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="nb">auto</span><span class="p">)</span> <span class="m">10vh</span><span class="p">;</span>
+<span class="err">    </span><span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="err">    </span><span class="py">grid-template-rows</span><span class="p">:</span> <span class="m">10vh</span> <span class="nb">auto</span> <span class="nb">auto</span> <span class="nb">auto</span> <span class="m">10vh</span><span class="p">;</span>
+<span class="err">    </span><span class="py">grid-template-areas</span><span class="p">:</span> <span class="s2">'....'</span>
+                         <span class="s2">'headline'</span>
+                         <span class="s2">'text'</span>
+                         <span class="s2">'button'</span>
+                         <span class="s2">'....'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.promo__headline</span> <span class="p">{</span>
+<span class="err">    </span><span class="py">grid-area</span><span class="p">:</span> <span class="n">headline</span><span class="p">;</span>
+<span class="err">    </span><span class="nl">align-self</span><span class="p">:</span> <span class="n">end</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.promo__text</span> <span class="p">{</span>
+<span class="err">    </span><span class="py">grid-area</span><span class="p">:</span> <span class="nb">text</span><span class="p">;</span>
+<span class="p">}</span><span class="err"> </span>
+<span class="nc">.promo__button</span> <span class="p">{</span>
+<span class="err">    </span><span class="py">grid-area</span><span class="p">:</span> <span class="n">button</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here’s where the power starts. We’re going to define our grid with one column and five rows.</p>
+
+<p>The five rows allow for us to vertically center our content. The first and last rows will be blank, but have an equal height set. Each of the middle three rows is sized by its content with the <code class="highlighter-rouge">auto</code> keyword.</p>
+
+<p>Finally, we tell the browser where to put our content by assigning a grid area name in <code class="highlighter-rouge">grid-template-areas</code>. We then assign <code class="highlighter-rouge">headline</code>, <code class="highlighter-rouge">text</code>, and <code class="highlighter-rouge">button</code> keywords to the classes of content that match. </p>
+
+<p>In this declaration, each row is represented by one string with columns separated by spaces. In this case, there’s only one column and five rows. The first and last rows are represented by one or more periods. This allows for these grid cells to be blank. </p>
+
+<p>One quick note: By assigning <code class="highlighter-rouge">align-self: end</code> to our headline, we create a stronger tie between headline and text.</p>
+
+<h2 id="converting-the-image-to-a-background">Converting the image to a background</h2>
+
+<p>At this point, you may have noticed we haven’t styled our <code class="highlighter-rouge">&lt;img&gt;</code>. </p>
+
+<p>To make the image span the full height and width our container, we need to tell it to fill all the rows. We could use <code class="highlighter-rouge">grid-row: 1 / 6</code> but then we’d need to redefine this at various breakpoints.</p>
+
+<p>The current specification of Grid doesn’t account for overlap in grid-template-areas. So, we’ll create “named lines” instead by redefining our grid-template-columns and -rows.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.promo</span> <span class="p">{</span>
+<span class="err">      </span><span class="py">grid-template-columns</span><span class="p">:</span> <span class="p">[</span><span class="n">image-start</span><span class="p">]</span> <span class="m">1</span><span class="n">fr</span> <span class="p">[</span><span class="n">image-end</span><span class="p">];</span>
+<span class="err">      </span><span class="py">grid-template-rows</span><span class="p">:</span> <span class="p">[</span><span class="n">image-start</span><span class="p">]</span> <span class="m">10vh</span> <span class="nb">auto</span> <span class="nb">auto</span> <span class="nb">auto</span> <span class="m">10vh</span> <span class="p">[</span><span class="n">image-end</span><span class="p">];</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Three big things are happening here:</p>
+
+<ol>
+  <li>A string inside of brackets <code class="highlighter-rouge">[image-start]</code> creates a named line.</li>
+  <li>Two named lines containing <code class="highlighter-rouge">-start</code> and <code class="highlighter-rouge">-end</code> will create a named area.</li>
+  <li>Two named lines in rows and two named lines in columns create a two-dimensional grid area.</li>
+</ol>
+
+<p>By defining these four lines, we can now call <code class="highlighter-rouge">grid-area: image</code> on our image and it will fill the entire promo.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.promo__image</span> <span class="p">{</span>
+<span class="err">        </span><span class="py">grid-area</span><span class="p">:</span> <span class="n">image</span><span class="p">;</span>
+<span class="err">        </span><span class="nl">align-self</span><span class="p">:</span> <span class="n">stretch</span><span class="p">;</span>
+<span class="err">        </span><span class="nl">object-fit</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<aside class="reference" style="grid-row: span 2;"> The default value <code class="highlighter-rouge">normal</code> is much like <code class="highlighter-rouge">stretch</code> but doesn't affect things with intrinsic aspect ratios like images.</aside>
+
+<p>You’ll note two other properties: <code class="highlighter-rouge">align-self</code> and <code class="highlighter-rouge">object-fit</code>.</p>
+
+<p>Align-self will allow the image to fill the entire grid cell. By allowing the image to stretch, it fills the space. Object-fit and the keyword <code class="highlighter-rouge">cover</code> allow an <code class="highlighter-rouge">&lt;img&gt;</code> tag to have the same functionality as <code class="highlighter-rouge">background-size: cover</code>.</p>
+
+<h2 id="add-the-overlay-with-mix-blend-modes">Add the overlay with mix-blend-modes</h2>
+
+<figure class="article__reference article__reference--row3">
+    <img src="/images/mobile-responsive-grid.jpg" alt="The mobile design" />
+</figure>
+
+<p>Normally, <a href="/blog/2018/04/30/how-to-css-after-elements-for-background-overlays/">I’d advocate for an ::after element in CSS to handle the darkened overlay</a>. In this instance, because our main background is an <code class="highlighter-rouge">&lt;img&gt;</code> tag, an <code class="highlighter-rouge">::after</code> element won’t work.</p>
+
+<p>To address this, we can add a <code class="highlighter-rouge">background-color</code> to the entire promo area and use <code class="highlighter-rouge">mix-blend-mode</code> on the image to blend the two.</p>
+
+<p>To avoid blending all the elements, we can add a z-index to affect our stacking context. By giving our image a z-index of 0 and our text elements a z-index of 1 (or more), only the image and background color will be blended.</p>
+
+<h2 id="add-a-breakpoint-for-tablets-and-large-phones">Add a breakpoint for tablets and large phones</h2>
+
+<p>This is the easy part. For larger phones and tablets, let’s set a breakpoint to put our promos side-by-side.</p>
+
+<p>In this example, we have two promos, so we’ll set our grid to two columns. If you have dynamic content, you could explore creating a fluid card grid.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">640px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="nc">.promos</span> <span class="p">{</span>
+<span class="err">        </span><span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+<span class="err">        </span><span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="err">        </span><span class="py">grid-gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="reference" style="grid-row: span 4;">
+    <img src="/images/responsive-just-desktop.jpg" />
+</figure>
+
+<h2 id="now-for-the-fun-desktop-reconfiguration">Now for the fun: desktop reconfiguration</h2>
+
+<p>Tablets were easy: Add an extra column. Done. For desktop, let’s create a row for each promo and let them breathe a bit.</p>
+
+<p>To build our new grid template, all we need to do is add a column and adjust our grid-template-areas.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css">    <span class="nt">grid-template-columns</span><span class="o">:</span> <span class="nt">1fr</span> <span class="nt">1fr</span><span class="o">;</span>
+    <span class="nt">grid-template-areas</span><span class="o">:</span> <span class="s2">'.......  image'</span>
+                         <span class="s2">'headline image'</span>
+                         <span class="s2">'  text   image'</span>
+                         <span class="s2">' button  image'</span>
+                         <span class="s2">'.......  image'</span><span class="o">;</span>
+    <span class="nt">grid-column-gap</span><span class="o">:</span> <span class="nt">20px</span><span class="o">;</span></code></pre></figure>
+
+<p>Since we named our grid areas, they’ll automatically flow into their new homes.</p>
+
+<p>With our grid now in place, let’s make a few stylistic choices to solidify this design.</p>
+
+<p>Let’s add a little white space on either side of our promos by setting a width and auto margins.</p>
+
+<p>We’ll also reset our font color and background color for the promos to values that make sense for the space the promos take up and align the text left instead of center.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">    </span><span class="nc">.promos</span> <span class="p">{</span>
+<span class="err">        </span><span class="nl">width</span><span class="p">:</span> <span class="m">95vw</span><span class="p">;</span>
+<span class="err">        </span><span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="err">    </span><span class="nc">.promo</span> <span class="p">{</span>
+<span class="err">        </span><span class="nl">background-color</span><span class="p">:</span> <span class="nb">transparent</span><span class="p">;</span> <span class="err">//</span> <span class="err">Turns</span> <span class="err">background</span> <span class="err">color</span> <span class="err">off</span>
+<span class="err">        </span><span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span> <span class="err">//</span> <span class="err">Inverts</span> <span class="err">text</span> <span class="err">color</span>
+<span class="err">        </span><span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="err">//</span> <span class="err">My</span> <span class="err">preference</span> <span class="err">for</span> <span class="err">this</span> <span class="err">style</span> <span class="err">of</span> <span class="err">promo</span>
+<span class="err">    </span><span class="p">}</span></code></pre></figure>
+
+<h2 id="alternate-image-and-text-location-on-promos">Alternate image and text location on promos</h2>
+
+<p>If you’re anything like me, it bothers you to see those images repeating down the right side of the screen. We can fix this with the addition of a class and one more grid-template-area reset.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.promo.even</span> <span class="p">{</span>
+    <span class="py">grid-template-areas</span><span class="p">:</span> <span class="s2">'image ....'</span>
+                         <span class="s2">'image headline'</span>
+                         <span class="s2">'image text'</span>
+                         <span class="s2">'image button'</span>
+                         <span class="s2">'image ....'</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>With that, we have an interesting set of design patterns that best match the device on which they’re viewed. As always, <a href="https://codepen.io/brob/pen/dKWdVB?editors=1000">you can play with the code on CodePen</a>.</p>
+
+<p>What are some other design patterns that would work well together with the power of Grid?</p>
+
+</main>

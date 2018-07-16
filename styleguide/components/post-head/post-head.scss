@@ -1,19 +1,36 @@
 .post-head {
-    text-align: right;
+    text-align: center;
     margin: -$spacing $spacing $spacing;
     padding: $spacing;
     border-bottom: 3px solid $color-accent;
-    background-image: linear-gradient(to right, transparent, transparentize($color-light, .7));
 
+    &--article {
+        padding: $spacing * 5 $spacing;
+        border-bottom: 0;
+        position: relative;
+        &::after {
+            display: block;
+            height: 4px; 
+            width: 150px;
+            margin: auto;
+            content: "";
+            background-image: linear-gradient(120deg,darken(#eaee44, 10%),darken(#33d0ff, 10%));
+            background-size: 300% 300%;
+            background-position: center center;
+            margin-top: $spacing;
+        }
+    }
     &__head {
         font-size: 2rem;
+        font-weight: 700;
         margin-bottom: 0;
     }
     &__subhead {
         margin: 0;
     }
     &__meta {
-        font-size: 1rem;
         margin: 0;
+        font-size: .75em;
+
     }
 }
