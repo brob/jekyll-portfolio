@@ -1,0 +1,21 @@
+<header class="site-header">
+    <a class="site-header__logo" title="Bryan L. Robinson dot com logo and home link" href="/">{% include "@logo" %}</a>
+    <nav class="nav-container">
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle"><span class="toggle-words">Menu</span></label>
+        <div class="overlay"></div>
+        <div class="site-nav">
+
+            <a href="/blog/" class="site-nav__item">Blog</a>
+            <a href="/experiments/" class="site-nav__item">Experiments</a>
+            <a href="/speaking/" class="site-nav__item">Speaking</a>
+            <a href="/portfolio/" class="site-nav__item">Portfolio</a>
+            <a href="http://codecontemporary.com" target="_blank" class="site-nav__item site-nav__promo">Code Contemporary</a>
+
+
+        </div>
+
+
+    </nav>
+
+</header>

@@ -1,0 +1,7 @@
+{% include "@header" %}
+
+{% render "@post-head--post-title" %}
+
+{% render "@article-body" %}
+
+{% include "@next-articles" %}
