@@ -42,7 +42,7 @@
     padding: 1rem;
     font-size: .8rem;
     margin-bottom: 1rem; // default stacking context overriden by grid support
-    &--first {
+    &--first, &--featured {
         grid-column: span 2;
         position: relative;
         border: 0;
@@ -77,6 +77,9 @@
             mix-blend-mode: screen;
 
         }
+    }
+    &--featured {
+        grid-column: span 1;
     }
     @supports (display: grid) {
         margin-bottom: 0;
