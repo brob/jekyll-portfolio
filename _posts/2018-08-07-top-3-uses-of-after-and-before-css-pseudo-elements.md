@@ -33,7 +33,7 @@ By default, this new element will be an inline element. After the element is ins
 
 _Important Note: Not all browser/screen reader combinations can read what you place inside the `content` of your pseudo-element. This should only be used for stylistic elements. True content should always be added to your page's markup._
 
-## Add icon next to certain types of links
+## Adding an icon next to certain types of links
 
 If you want to give your users a little more visual information about what link is about to do, you can use ::after to add an icon without adding markup.
 
@@ -71,7 +71,7 @@ For more information on the black magic of these selectors, [read this awesome p
 
 
 
-## Add interesting “borders”
+## Adding interesting “borders” to containers
 
 ![Full Gradient border](/images/pseudo-element-full-border.png)
 
@@ -139,7 +139,7 @@ Since this is just an element on the page, we can also have our border skewed. R
 [Play with this on CodePen](https://codepen.io/brob/pen/jpawRd?editors=1100)
 
 
-## Add Stylistic elements that you don’t want add markup for
+## Adding stylistic elements that you don’t want add markup for
 
 A `<blockquote>` is a great semantic element. Let's not ruin it with extra markup.
 
