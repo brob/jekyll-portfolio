@@ -12,6 +12,10 @@ description: Use &#58;after elements to create the simplest HTML possible to ren
 grid-size: large
 ---
 
+<aside class="reference">
+    <p>Looking for more uses of ::after and :before? <a href="/blog/2018/08/07/top-3-uses-of-after-and-before-css-pseudo-elements/">Read my Top 3 Uses beyond the overlay</a></p>
+</aside>
+
 <figure><img src="/images/overlay-finished.jpg" alt="Grid Love"></figure>
 
 
