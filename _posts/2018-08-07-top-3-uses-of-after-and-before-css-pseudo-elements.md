@@ -13,7 +13,7 @@ description: It’s no secret that I'm a fan of &#58;&#58;before and &#58;&#58;a
 grid-size: large
 ---
 
-It’s no secret that I'm a fan of ::before and ::after pseudo-elements. I use them to great effect for [creating darkened overlays in this previous post](How To: Use CSS :after pseudo-elements to create simple overlays).
+It’s no secret that I'm a fan of ::before and ::after pseudo-elements. I use them to great effect for [creating darkened overlays in this previous post](/blog/2018/04/30/how-to-css-after-elements-for-background-overlays/).
 
 They have so many uses beyond that, though. This post outlines my three favorite uses outside of overlays.
 
