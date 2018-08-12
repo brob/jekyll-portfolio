@@ -10,6 +10,8 @@ featuredLarge: true
 baseLayout: container--right
 description: Use &#58;after elements to create the simplest HTML possible to render useful and fun overlays on top of background images. Then extend them with blend-modes!
 grid-size: large
+updated: 08 Aug, 2018
+
 ---
 
 <aside class="reference">
