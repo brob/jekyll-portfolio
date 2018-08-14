@@ -11,7 +11,7 @@ description: In this tutorial, I'm going to show you how to take one of the most
 featuredImg: /images/blog/fluid-grid/featured-grid.png
 featuredLarge: True
 baseLayout: container--right
-updated: 08 Dec, 2017
+updated: 14 Aug, 2018
 ---
 
 In this tutorial, I'm going to show you how to take one of the most common tropes of web design -- the card grid -- and make it fluid. 
@@ -20,12 +20,16 @@ We could build this via a float- or flex-based grid and a handful of breakpoints
 
 Grid can do so much more than recreating old design patterns. If you're looking for a good place to start, though, this is the best introduction to its power.
 
-<div class="pull-2">
-<video autoplay loop style="width: 100%;">
-  <source src="/files/fluid-grid-vid.mp4" type="video/mp4">
-</video>
-
-<!-- <img src="/images/blog/fluid-grid/fluid-grid.gif" alt="Fluid Grid gif"> -->
+## Video: For those who learn by watching
+<div class="" style="position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; margin-bottom: 1rem;">
+<iframe style="position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;" width="560" height="315" src="https://www.youtube.com/embed/5fUKd2kDTzc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
 ## Step 1: Create your markup
