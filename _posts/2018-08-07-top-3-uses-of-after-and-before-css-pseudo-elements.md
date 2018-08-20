@@ -11,6 +11,7 @@ featuredLarge: true
 baseLayout: container--right
 description: It’s no secret that I'm a fan of &#58;&#58;before and &#58;&#58;after pseudo-elements. I use them to great effect for creating darkened overlays in this previous post. They have so many uses beyond that, though. Here are my top 3 uses for them in my every-day development process.
 grid-size: large
+updated: 20 Aug, 2018
 ---
 
 It’s no secret that I'm a fan of ::before and ::after pseudo-elements. I use them to great effect for [creating darkened overlays in this previous post](/blog/2018/04/30/how-to-css-after-elements-for-background-overlays/).
@@ -106,10 +107,20 @@ By positioning the pseudo-element absolute, we have control over its placement. 
 
 [Play with this on CodePen](https://codepen.io/brob/pen/JBmKqN?editors=1100)
 
+
 Instead of a full border, what if we want our headlines to have fancy small borders underneath them?
 
-![Full Gradient border](/images/pseudo-element-bottom-border.jpg)
-
+<figure style="position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; margin-bottom: 1rem;">
+      <iframe width="560" height="315" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;" src="https://www.youtube.com/embed/_Vtvc0JIgQ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</figure>
 
 We can use an ::after element to accomplish that.
 
