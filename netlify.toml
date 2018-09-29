@@ -3,3 +3,6 @@
 [context.style-guide]
   publish = "styles"
   command = "gulp style:build"
+
+[build]
+  functions = "./functions"
