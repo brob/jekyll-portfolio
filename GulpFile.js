@@ -78,6 +78,14 @@ gulp.task('serve:jekyll', function() {
     .on('error', gutil.log);
 });
 
+gulp.task('lambda:build', function() {
+    var shellCommand = "netlify-lambda build lambda_build";
+
+    return gulp.src('')
+    .pipe(run(shellCommand))
+    .on('error', gutil.log);
+});
+
 gulp.task('default', function(callback) {
     runSequence('sass:watch', 'fractal:start', 'serve:jekyll', callback);
 });
@@ -95,5 +103,5 @@ gulp.task('style:build', function(callback) {
 
 // Master branch deploy builder
 gulp.task('build', function(callback) {
-    runSequence('sass', 'build:jekyll', 'img-opt');
+    runSequence('sass', 'build:jekyll', 'lambda:build', 'img-opt');
 });
