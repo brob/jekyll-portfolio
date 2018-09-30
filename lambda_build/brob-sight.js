@@ -15,7 +15,13 @@ export function handler(event, context, callback) {
     if(imgUrl) {
       let urlPieces = imgUrl.split('/');
       let photoId = urlPieces[urlPieces.length - 1];
-      var imgDownloadLink = `https://imgur.com/download/${photoId}`
+      if (photoId.endsWith('.jpg')) {
+        let idSplit = photoId.split('.');
+        photoId = idSplit[0];
+        console.log(`Download link: ${photoId}`);
+      } 
+      var imgDownloadLink = `https://imgur.com/download/${photoId}`      
+      console.log(`Download link: ${imgDownloadLink}`);
     } 
     // now we have the data, let's massage it and post it to the approved form
     var payload = {

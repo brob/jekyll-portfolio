@@ -100,6 +100,10 @@ gulp.task('status:get', function () {
             // massage the data into the shape we want,
             for (var item in body) {
                 var data = body[item].data;
+                if (data.imgUrl.endsWith('.jpg')) {
+                    let idSplit = data.imgUrl.split('.j');
+                    data.imgUrl = idSplit[0];
+                }
                 var status = {
                     status: data.doing,
                     imgUrl: data.imgUrl,
