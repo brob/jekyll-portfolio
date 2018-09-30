@@ -3,13 +3,21 @@ title: Bryan Sight
 subhead: A HACKmemphis project for static builds
 permalink: "/bryan-sight/"
 layout: interior
-baseLayout: pull-2
+baseLayout: container--full
 ---
-
+<style>
+    .container--full > * {
+        grid-column: span 2;
+        box-shadow: 0 0 3px #333;
+    }
+    .article p {
+        padding: 1em;
+    }
+</style>
 
 {% for status in site.data.statuses %}
     <article class="article">
         <img src="{{ status.imgUrl }}">
-        {{ status.status }}
+        <p>{{ status.status }}</p>
     </article>
 {% endfor %}
