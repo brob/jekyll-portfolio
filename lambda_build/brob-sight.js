@@ -48,7 +48,10 @@ exports.handler = async (event, context) => {
 
 
     return {
-      statusCode: 200,
-      body: JSON.stringify({payload})
+      statusCode: 301,
+        headers: {
+            "Location" : "https://bryanlrobinson.com/bryan-sight"
+        },
+        body: null
     };
   };
