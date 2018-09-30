@@ -11,13 +11,16 @@ require('dotenv').config()
 exports.handler = async (event, context) => {
     const doingString = event.queryStringParameters.doing;
     const imgUrl = event.queryStringParameters.imgUrl;
+    let urlPieces = imgUrl.split('/');
+    let photoId = urlPieces[urlPieces.length - 1];
+    let imgDownloadLink = `https://imgur.com/download/${photoId}`
 
     // now we have the data, let's massage it and post it to the approved form
     var payload = {
       'form-name' : "happening-post",
       'received': new Date().toString(),
       'doing': doingString,
-      'imgUrl': imgUrl
+      'imgUrl': imgDownloadLink
     };
 
     console.log(payload);

@@ -93,7 +93,6 @@ gulp.task('lambda:build', function () {
 
 gulp.task('status:get', function () {
     var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
-    console.log(url);
     request(url, function (err, response, body) {
         if (!err && response.statusCode === 200) {
             var body = JSON.parse(body);
@@ -101,7 +100,6 @@ gulp.task('status:get', function () {
             // massage the data into the shape we want,
             for (var item in body) {
                 var data = body[item].data;
-                console.log(data);
                 var status = {
                     status: data.doing,
                     imgUrl: data.imgUrl,
