@@ -8,7 +8,7 @@ require('dotenv').config()
 
 
 
-exports.handler = async (event, context) => {
+export function handler(event, context, callback) {
     const doingString = event.queryStringParameters.doing;
     const imgUrl = event.queryStringParameters.imgUrl;
     let urlPieces = imgUrl.split('/');
@@ -42,16 +42,13 @@ exports.handler = async (event, context) => {
       }
       var msg = "Comment registered. Site deploying to include it.";
 
-      return true;
+      console.log(msg);
     });
 
 
 
-    return {
-      statusCode: 301,
-        headers: {
-            "Location" : "https://bryanlrobinson.com/bryan-sight"
-        },
-        body: null
-    };
+    callback(null, {
+      statusCode: 200,
+      body: 'Success, thanks!'
+    });
   };
