@@ -11,10 +11,12 @@ require('dotenv').config()
 export function handler(event, context, callback) {
     const doingString = event.queryStringParameters.doing;
     const imgUrl = event.queryStringParameters.imgUrl;
-    let urlPieces = imgUrl.split('/');
-    let photoId = urlPieces[urlPieces.length - 1];
-    let imgDownloadLink = `https://imgur.com/download/${photoId}`
-
+    
+    if(imgUrl) {
+      let urlPieces = imgUrl.split('/');
+      let photoId = urlPieces[urlPieces.length - 1];
+      var imgDownloadLink = `https://imgur.com/download/${photoId}`
+    } 
     // now we have the data, let's massage it and post it to the approved form
     var payload = {
       'form-name' : "happening-post",
@@ -43,12 +45,10 @@ export function handler(event, context, callback) {
       var msg = "Comment registered. Site deploying to include it.";
 
       console.log(msg);
-    });
-
-
-
-    callback(null, {
-      statusCode: 200,
-      body: 'Success, thanks!'
+      callback(null, {
+        statusCode: 200,
+        body: msg
+      });
+      return console.log(msg);
     });
   };
