@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
     };
 
     console.log(payload);
-    var approvedURL = "https://bryanlrobinson.com";
+    var approvedURL = "https://bryanlrobinson.com/bryan-sight";
 
     request.post({'url':approvedURL, 'formData': payload }, function(err, httpResponse, body) {
       var msg;

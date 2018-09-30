@@ -1,0 +1,15 @@
+---
+title: Bryan Sight
+subhead: A HACKmemphis project for static builds
+permalink: "/bryan-sight/"
+layout: interior
+baseLayout: pull-2
+---
+
+
+{% for status in site.data.statuses %}
+    <article class="article">
+        <img src="{{ status.imgUrl }}">
+        {{ status.status }}
+    </article>
+{% endfor %}
