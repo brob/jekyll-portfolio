@@ -16,10 +16,13 @@ var gulp = require('gulp'),
 fractal.web.set('builder.dest', 'styles'); // destination for the static export
 
 require('dotenv').config();
-
 var buildSrc = "./";
 
-// gulp.task('default', ['sass', 'sass:watch']);
+function download(uri, filename, callback){
+    request.head(uri, function(err, res, body){      
+        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+    });
+};
 
 gulp.task('img-opt', function () {
 
@@ -91,6 +94,41 @@ gulp.task('lambda:build', function () {
         .on('error', gutil.log);
 });
 
+
+gulp.task('image:get', function() {
+    function imageNeeds() {
+        var idList = fs.readFileSync('_data/statuses.json', 'utf8', function(err, contents) {
+            return statuses;
+        });
+        var jsonEncoded = JSON.parse(idList);
+        const statusImageIds = jsonEncoded.map(status => { let split = status.imgUrl.split('/'); return split[split.length - 1]; });
+        return statusImageIds;
+    } 
+    function currentlyDownloaded() {
+
+        const files = fs.readdirSync('./images/statusImages', (err, files) => {
+            return files;        
+        });
+        const imageIds = files.map(imageUrl => imageUrl.replace('.jpg', ''));
+        return imageIds;
+    }
+
+    const imageIdList = imageNeeds();
+    const downloadedIdList = currentlyDownloaded();
+
+    let needToDownload = imageIdList.filter(e => {
+        return ! downloadedIdList.includes(e);
+    });
+
+    needToDownload.forEach(fileId => {
+        let url = `https://imgur.com/download/${fileId}`;
+        let fileName = `./images/statusImages/${fileId}.jpg`
+        download(url, fileName, function() {
+            console.log(`Downloaded ${url}`);
+        })
+    });
+});
+
 gulp.task('status:get', function () {
     var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
     request(url, function (err, response, body) {
@@ -104,36 +142,35 @@ gulp.task('status:get', function () {
                     let idSplit = data.imgUrl.split('.j');
                     data.imgUrl = idSplit[0];
                 }
+                let imgUrlSplit = data.imgUrl.split('/');
+                // console.log(imgUrlSplit);
+                let imgId = imgUrlSplit[imgUrlSplit.length - 1];
                 var status = {
                     status: data.doing,
                     imgUrl: data.imgUrl,
+                    localUrl: `/images/statusImages/${imgId}.jpg`,
                     date: body[item].created_at
                 };
-
                 statuses.push(status);
-
             }
 
             // write our data to a file where our site generator can get it.
             fs.writeFile(buildSrc + "/_data/statuses.json", JSON.stringify(statuses, null, 2), function (err) {
                 if (err) {
                     console.log(err);
-                    //   done();
                 } else {
                     console.log("Comments data saved.");
-                    //   done();
                 }
             });
 
         } else {
             console.log("Couldn't get comments from Netlify");
-            //   exit();
         }
     });
 });
 
 gulp.task('default', function (callback) {
-    runSequence('sass:watch', 'fractal:start', 'status:get', 'serve:jekyll', callback);
+    runSequence('sass:watch', 'fractal:start', 'status:get', 'image:get', 'serve:jekyll', callback);
 });
 
 // For just working on styleguide and not running jekyll server
@@ -149,5 +186,5 @@ gulp.task('style:build', function (callback) {
 
 // Master branch deploy builder
 gulp.task('build', function (callback) {
-    runSequence('sass', 'status:get', 'build:jekyll', 'lambda:build', 'img-opt');
+    runSequence('sass', 'status:get', 'image:get', 'build:jekyll', 'lambda:build', 'img-opt');
 });

@@ -5,9 +5,6 @@ var request = require("request");
 // populate environment variables locally.
 require('dotenv').config()
 
-
-
-
 export function handler(event, context, callback) {
     const doingString = event.queryStringParameters.doing;
     const imgUrl = event.queryStringParameters.imgUrl;
@@ -16,14 +13,13 @@ export function handler(event, context, callback) {
       let urlPieces = imgUrl.split('/');
       let photoId = urlPieces[urlPieces.length - 1];
       if (photoId.endsWith('.jpg')) {
+        // Protects against imgur changing
         let idSplit = photoId.split('.');
         photoId = idSplit[0];
-        console.log(`Download link: ${photoId}`);
       } 
       var imgDownloadLink = `https://imgur.com/download/${photoId}`      
-      console.log(`Download link: ${imgDownloadLink}`);
     } 
-    // now we have the data, let's massage it and post it to the approved form
+
     var payload = {
       'form-name' : "happening-post",
       'received': new Date().toString(),
@@ -31,24 +27,19 @@ export function handler(event, context, callback) {
       'imgUrl': imgDownloadLink
     };
 
-    console.log(payload);
-    var approvedURL = "https://bryanlrobinson.com/bryan-sight";
+    var approvedURL = process.env.POST_FORM;
 
     request.post({'url':approvedURL, 'formData': payload }, function(err, httpResponse, body) {
       var msg;
-      console.log('inside post');
-      if (err) {
-        console.log('inside error');
 
-        msg = 'Post to approved comments failed:' + err;
+      if (err) {
+        msg = 'Post to status list failed:' + err;
         console.log(msg);
       } else {
-        console.log('inside else');
-        console.log(httpResponse.statusCode);
-        msg = 'Post to approved comments list successful.'
+        msg = 'Post to status list successful.'
         console.log(msg);
       }
-      var msg = "Comment registered. Site deploying to include it.";
+      var msg = "Status posted. Deploy triggered.";
 
       console.log(msg);
       callback(null, {
