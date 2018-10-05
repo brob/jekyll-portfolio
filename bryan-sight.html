@@ -17,7 +17,7 @@ baseLayout: container--full
 
 {% for status in site.data.statuses %}
     <article class="article">
-        <img src="{{ status.imgUrl }}">
+        <img src="{{ status.localUrl }}">
         <p>{{ status.status }}</p>
     </article>
 {% endfor %}
