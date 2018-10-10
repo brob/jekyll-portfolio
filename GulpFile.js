@@ -16,7 +16,44 @@ var gulp = require('gulp'),
 fractal.web.set('builder.dest', 'styles'); // destination for the static export
 
 require('dotenv').config();
-var buildSrc = "./";
+
+
+
+function download(uri, filename, callback){
+    request.head(uri, function(err, res, body){      
+        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+    });
+};
+
+function cleanFile(filePath, callback) {
+    fs.truncate(filePath, 0, callback);
+}
+
+function getId(imageUrl) {
+    if (imageUrl.endsWith('.jpg')) {
+        // protects against imgur URL changes from 'app' source
+        let idSplit = imageUrl.split('.j');
+        imageUrl = idSplit[0];
+    }
+    let imgUrlSplit = imageUrl.split('/');
+    let imgId = imgUrlSplit[imgUrlSplit.length - 1];
+
+    return imgId;
+}
+
+function buildStatuses(body) {
+    let data = body.data;
+    let imgId = getId(data.imgUrl);
+
+    const status = {
+        status: data.doing,
+        imgUrl: data.imgUrl,
+        localUrl: `/images/statusImages/${imgId}.jpg`,
+        date: body.created_at
+    };
+    return status;
+}
+
 
 function download(uri, filename, callback){
     request.head(uri, function(err, res, body){      
@@ -97,15 +134,16 @@ gulp.task('lambda:build', function () {
 
 gulp.task('image:get', function() {
     function imageNeeds() {
-        var idList = fs.readFileSync('_data/statuses.json', 'utf8', function(err, contents) {
+        // Creates array of all image IDs in JSON file
+        let idList = fs.readFileSync('_data/statuses.json', 'utf8', function(err, contents) {
             return statuses;
         });
-        var jsonEncoded = JSON.parse(idList);
+        let jsonEncoded = JSON.parse(idList);
         const statusImageIds = jsonEncoded.map(status => { let split = status.imgUrl.split('/'); return split[split.length - 1]; });
         return statusImageIds;
     } 
     function currentlyDownloaded() {
-
+        // Creates array of images currently in the project
         const files = fs.readdirSync('./images/statusImages', (err, files) => {
             return files;        
         });
@@ -115,7 +153,8 @@ gulp.task('image:get', function() {
 
     const imageIdList = imageNeeds();
     const downloadedIdList = currentlyDownloaded();
-
+    console.log(imageIdList, downloadedIdList);
+    // Filters IDs to find images we need to download
     let needToDownload = imageIdList.filter(e => {
         return ! downloadedIdList.includes(e);
     });
@@ -130,45 +169,35 @@ gulp.task('image:get', function() {
 });
 
 gulp.task('status:get', function () {
-    var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
-    request(url, function (err, response, body) {
-        if (!err && response.statusCode === 200) {
-            var body = JSON.parse(body);
-            var statuses = [];
-            // massage the data into the shape we want,
-            for (var item in body) {
-                var data = body[item].data;
-                if (data.imgUrl.endsWith('.jpg')) {
-                    let idSplit = data.imgUrl.split('.j');
-                    data.imgUrl = idSplit[0];
-                }
-                let imgUrlSplit = data.imgUrl.split('/');
-                // console.log(imgUrlSplit);
-                let imgId = imgUrlSplit[imgUrlSplit.length - 1];
-                var status = {
-                    status: data.doing,
-                    imgUrl: data.imgUrl,
-                    localUrl: `/images/statusImages/${imgId}.jpg`,
-                    date: body[item].created_at
-                };
-                statuses.push(status);
+    // URL for data store
+    let url = `https://api.netlify.com/api/v1/forms/${process.env.STATUS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
+    let statusFile = `./_data/statuses.json`;
+
+    cleanFile(statusFile, function() {
+        // Erases JSON file
+        console.log(`${statusFile} cleaned`);
+        request(url, function (err, response, body) {
+            if (!err && response.statusCode === 200) {
+                let bodyArray = JSON.parse(body);
+                let statuses = bodyArray.map(buildStatuses);
+
+                // Write the status to a data file
+                fs.writeFileSync(statusFile, JSON.stringify(statuses, null, 2), function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Status data saved.");
+                    }
+                });
+                console.log(`${statusFile} rebuilt from data`);
+    
+            } else {
+                console.log("Couldn't get statuses from Netlify");
             }
-
-            // write our data to a file where our site generator can get it.
-            fs.writeFile(buildSrc + "/_data/statuses.json", JSON.stringify(statuses, null, 2), function (err) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("Comments data saved.");
-                }
-            });
-
-        } else {
-            console.log("Couldn't get comments from Netlify");
-        }
+        });
     });
+    
 });
-
 gulp.task('default', function (callback) {
     runSequence('sass:watch', 'fractal:start', 'status:get', 'image:get', 'serve:jekyll', callback);
 });

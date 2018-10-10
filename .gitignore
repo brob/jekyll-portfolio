@@ -5,3 +5,4 @@ style.css
 /styles
 functions/*
 .vscode/*
+.env
