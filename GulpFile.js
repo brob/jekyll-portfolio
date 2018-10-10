@@ -139,7 +139,7 @@ gulp.task('image:get', function() {
             return statuses;
         });
         let jsonEncoded = JSON.parse(idList);
-        const statusImageIds = jsonEncoded.map(status => { let split = status.imgUrl.split('/'); return split[split.length - 1]; });
+        const statusImageIds = jsonEncoded.map(status => getId(status.imgUrl));
         return statusImageIds;
     } 
     function currentlyDownloaded() {
@@ -147,7 +147,7 @@ gulp.task('image:get', function() {
         const files = fs.readdirSync('./images/statusImages', (err, files) => {
             return files;        
         });
-        const imageIds = files.map(imageUrl => imageUrl.replace('.jpg', ''));
+        const imageIds = files.map(imageUrl => getId(imageUrl));
         return imageIds;
     }
 
