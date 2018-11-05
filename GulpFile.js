@@ -155,9 +155,7 @@ gulp.task('image:get', function() {
     const downloadedIdList = currentlyDownloaded();
     console.log(imageIdList, downloadedIdList);
     // Filters IDs to find images we need to download
-    let needToDownload = imageIdList.filter(e => {
-        return ! downloadedIdList.includes(e);
-    });
+    let needToDownload = imageIdList.filter(e => ! downloadedIdList.includes(e));
 
     needToDownload.forEach(fileId => {
         let url = `https://imgur.com/download/${fileId}`;

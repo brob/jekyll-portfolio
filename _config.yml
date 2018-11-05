@@ -23,7 +23,7 @@ collections:
 name: bryanlrobinson.com
 author: Bryan Robinson
 author_email: bryanlrobinson@gmail.com
-url: http://bryanlrobinson.com/
+url: https://bryanlrobinson.com
 permalink: "/blog/:year/:month/:day/:title/"
 markdown: kramdown
 defaults:
