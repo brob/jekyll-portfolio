@@ -7,7 +7,7 @@ categories:
   - tutorial
   - javascript
 baseLayout: container--right
-featuredImg: /images/uploads/shortcuts-live.jpg
+featuredImg: /images/uploads/shortcuts-screens.jpg
 featuredLarge: true
 description: An experiment adding dynamic functionality to this site pushed via iOS shortcuts and Netlify functions
 ---
