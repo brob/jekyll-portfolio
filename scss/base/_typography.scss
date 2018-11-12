@@ -40,6 +40,12 @@ h2, h3, h4, h5, h6 {
     margin-bottom: calc(.5em + .5vw);
 }
 
+p + {
+    h2, h3, h4, h5, h6 {
+        margin-top: 1.25rem;
+    }
+}
+
 h1 {
     @include primary-font;
     font-size: 2.3rem;
