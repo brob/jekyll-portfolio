@@ -6,6 +6,7 @@ categories:
   - design
 baseLayout: container--right
 description: I'm beginning my new journey as an independent creator. I've left the comfortable confines of agency life to see what I can do creating resources for designers and developers. I'll be writing, recording, speaking and consulting. Much of this will be under the heading of my new company Code Contemporary
+featuredImg: /images/uploads/code-contemporary-logo.png
 ---
 
 It seems that everyone does a post like this: a bold announcement of a new journey. As of this morning, I'm beginning my new journey as an independent creator. 
