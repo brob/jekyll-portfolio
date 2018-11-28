@@ -7,6 +7,7 @@ categories:
 baseLayout: container--right
 description: It struck me recently as I was writing a new Sass mixin that there may be designers and developers out there that haven't translated vanilla CSS into a Sass function. In this article, I want to show how to take often-used CSS and convert it into a DRY (Don't Repeat Yourself) Sass mixin.
 featuredImg: /images/uploads/refactoring-css-to-sass.png
+featuredLarge: true
 ---
 
 ![Graphic refactoring CSS to Sass](/images/uploads/refactoring-css-to-sass-post.png)
