@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     run = require('gulp-run'),
     runSequence = require('run-sequence'),
     gutil = require('gulp-util'),
-    fs = require('file-system'),
+    fs = require('fs'),
     request = require('request');
 fractal.web.set('builder.dest', 'styles'); // destination for the static export
 
