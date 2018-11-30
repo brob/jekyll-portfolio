@@ -48,7 +48,7 @@
         border: 0;
         align-self: center;
         > * {
-            z-index: 100;
+            z-index: 90;
             position: relative;
         }
         $gradient-border-size: 10px;
