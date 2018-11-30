@@ -96,7 +96,7 @@
     }
     ~ .overlay {
         display: none;
-        z-index: 1;
+        z-index: 91;
         transition-duration: .4s;
         transition-timing-function: cubic-bezier(0.38, 0.52, 0.37, 1.27);
     }
