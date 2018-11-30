@@ -19,6 +19,21 @@ At the forefront of this is my first course: Practical CSS Grid. If you head ove
 
 Other than creating new paid courses, I plan on releasing as much free content as I can. To that end, I'll still be posting blog posts to this site, [posting videos on YouTube](https://www.youtube.com/channel/UCTLrD1MTRbjxtFCRaFXqkdQ) and [reinvigigorating my Code Contemporary Newsletter](https://tinyletter.com/code-contemporary). Beyond that, I'll also be live streaming office hours each week.
 
+
+<div class="ad-space">
+
+  <img src="/images/cc-logo.png" class="ad-space__image">
+
+  <h3 class="ad-space__headline">Practical CSS Grid 50% off!</h3>
+
+  <p class="ad-space__description">Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!</p>
+
+  <a href="#" class="button ad-space__button">Sign Up Now</a>
+
+</div>
+
+
+
 ## My goal by the numbers
 
 Doing this full time will allow me to put out much more content. I plan on keeping track of this by setting some goals for myself each month.
