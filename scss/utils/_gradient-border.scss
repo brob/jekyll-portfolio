@@ -1,0 +1,31 @@
+@mixin gradient-border($size: 10px, $gradient-start:#eaee44, $gradient-end: #33d0ff) {
+    position: relative;
+    padding: $size * 2;
+    > * {
+        z-index: 100;
+        position: relative;
+    }
+    &::before, &::after {
+        content: "";
+        display: block;
+        position: absolute;
+    }
+    &::before {
+        background-color: $white;          
+        top: $size;
+        left: $size;
+        width: calc(100% - #{$size * 2});
+        height: calc(100% - #{$size * 2});
+        z-index: 0;
+    }
+    &::after {
+        background-image: linear-gradient(120deg, $gradient-start, $gradient-end);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        mix-blend-mode: screen;
+
+    }
+}

@@ -1,0 +1,48 @@
+.ad-space {
+    @include gradient-border;
+    margin-bottom: 1rem;
+
+    display: grid;
+    grid-template-columns: .33fr 1fr;
+    grid-gap: .5rem 1rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
+    
+    &__image {
+        grid-row: span 3;
+        max-height: 300px;
+        @media (max-width: 768px) {
+            max-height: 11rem;
+            justify-self: center;
+        }
+    }
+    &__headline {
+        margin-bottom: 0;
+        align-self: end;
+    }
+    &__description {
+        margin-bottom: 0;
+    }
+    &__button {
+        align-self: start;
+        justify-self: start;
+        display: inline-block;
+        background-color: $color-accent;
+        color: $white;
+        text-align: center;
+        padding: .5rem 3rem;
+        font-size: .8rem;
+        transition: background-color .3s ease-out;
+        &:hover {
+            color: $white;
+            background-color: $color-brand;
+        }
+
+        @media (max-width: 768px) {
+            justify-self: stretch;
+        }
+    }
+}

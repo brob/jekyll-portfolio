@@ -44,39 +44,9 @@
     margin-bottom: 1rem; // default stacking context overriden by grid support
     &--first, &--featured {
         grid-column: span 2;
-        position: relative;
         border: 0;
         align-self: center;
-        > * {
-            z-index: 90;
-            position: relative;
-        }
-        $gradient-border-size: 10px;
-        &::before {
-            background-color: $white;;
-            content: "";
-            display: block;
-            position: absolute;
-            
-            top: $gradient-border-size;
-            left: $gradient-border-size;
-            width: calc(100% - #{$gradient-border-size * 2});
-            height: calc(100% - #{$gradient-border-size * 2});
-            z-index: 0;
-        }
-        &::after {
-            background-image: linear-gradient(120deg, #eaee44, #33d0ff);
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            mix-blend-mode: screen;
-
-        }
+        @include gradient-border;
     }
     &--featured {
         grid-column: span 1;
