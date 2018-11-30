@@ -11,6 +11,12 @@ description: Mobile navigation and the "hamburger nav" pattern aren't going away
 featuredImg: /images/blog/mobile-nav/mobile-nav-static.png
 featuredLarge: True
 baseLayout: container--right
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 Before we get started, I'd like to state for the record: I like JavaScript. There's nothing wrong with using the third language of the browser. It's a great tool for many solutions. But for simple interactions, why complicate matters?
@@ -24,6 +30,8 @@ Click events and state management being built in JavaScript.
 That's not unusual. These tasks are perfect for JavaScript. If we're hiding the navigation on mobile, though, should we be adding another dependency to the page to display it?
 
 Why don't we go old school? The only thing keeping us from a JavaScriptless mobile navigation is state management. How can we trigger a "show" state on tap or click, right? 
+
+{% include ad-space.html %}
 
 ## The original "stated" element
 

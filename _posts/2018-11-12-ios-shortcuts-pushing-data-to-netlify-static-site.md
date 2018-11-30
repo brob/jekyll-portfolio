@@ -10,6 +10,12 @@ baseLayout: container--right
 featuredImg: /images/uploads/shortcuts-screens.jpg
 featuredLarge: true
 description: An experiment adding dynamic functionality to this site pushed via iOS shortcuts and Netlify functions
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 I've been using Netlify as my host for a while now and have consistently loved the experience. In my time with the service, I haven't been utilizing it much more than a static site host.
@@ -28,6 +34,8 @@ I really want to use more of their features and make my static site more dynamic
 When iOS released Shortcuts with iOS12, I saw Netlify's Twitter account share a video of someone deploying their site with a shortcut. I thought that was excellent, so I decided to go that route. 
 
 With this challenge, I wanted to learn more about Serverless functions and Netlify's API. I did some reading and based my solution off of Phil Hawkworth's [excellent JAMstack comment engine functionality](https://github.com/philhawksworth/jamstack-comments-engine).
+
+{% include ad-space.html %}
 
 ### Requirements
 
