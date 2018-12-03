@@ -22,7 +22,17 @@ I've begun live-streaming office hours every week. In my first effort at it, I m
 
 It struck me as I was writing a new Sass mixin that there may be designers and developers out there that haven't translated vanilla CSS into a Sass function. In this article, I want to show how to take often-used CSS and convert it into a DRY (Don't Repeat Yourself) Sass mixin.
 
-{% include ad-space.html %}
+<figure style="grid-column: 1 / 3; grid-row: span 3; position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; margin-bottom: 1rem;">
+      <iframe width="560" height="315" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;" src="https://www.youtube.com/embed/6UxUuDZ_ujQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</figure>
 
 ## The Starting CSS
 
@@ -65,6 +75,8 @@ In this case, we need to affect four main elements with our CSS. The parent elem
 {% endhighlight %}
 
 Taking a look at this code, you can see that it would be a lot to create by hand every time we wanted to do a different gradient border.
+
+{% include ad-space.html %}
 
 ## Step 1: Identify potential Sass variables
 
