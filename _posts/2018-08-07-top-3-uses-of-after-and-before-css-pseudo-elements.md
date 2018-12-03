@@ -12,6 +12,12 @@ baseLayout: container--right
 description: It’s no secret that I'm a fan of &#58;&#58;before and &#58;&#58;after pseudo-elements. I use them to great effect for creating darkened overlays in this previous post. They have so many uses beyond that, though. Here are my top 3 uses for them in my every-day development process.
 grid-size: large
 updated: 20 Aug, 2018
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 It’s no secret that I'm a fan of ::before and ::after pseudo-elements. I use them to great effect for [creating darkened overlays in this previous post](/blog/2018/04/30/how-to-css-after-elements-for-background-overlays/).
@@ -33,6 +39,8 @@ When the browser inserts this element into the DOM, it inserts it INSIDE the ele
 By default, this new element will be an inline element. After the element is inserted into the DOM, it can be modified like any other element. This gives us lots of control to have all sorts of fun.
 
 _Important Note: Not all browser/screen reader combinations can read what you place inside the `content` of your pseudo-element. This should only be used for stylistic elements. True content should always be added to your page's markup._
+
+{% include ad-space.html %}
 
 ## Adding an icon next to certain types of links
 

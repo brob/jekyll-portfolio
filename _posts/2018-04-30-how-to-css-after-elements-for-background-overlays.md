@@ -11,7 +11,12 @@ baseLayout: container--right
 description: Use &#58;after elements to create the simplest HTML possible to render useful and fun overlays on top of background images. Then extend them with blend-modes!
 grid-size: large
 updated: 08 Aug, 2018
-
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 <aside class="reference">
@@ -42,6 +47,8 @@ The process looks something like this:
 1. Use a `::before` or `::after` element to create your banner
 1. Fix `z-index` issues caused by absolute positioning
 1. Experiment with `mix-blend-mode` for fun and profit
+
+{% include ad-space.html %}
 
 ### Step 1: All the markup you need, none of the bloat
 <figure style="grid-column: 1 / 3; grid-row: span 2;"><img src="/images/overlay-starting-point.jpg" alt="Grid Love"></figure>

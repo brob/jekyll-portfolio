@@ -7,6 +7,12 @@ categories:
 baseLayout: container--right
 description: I'm beginning my new journey as an independent creator. I've left the comfortable confines of agency life to see what I can do creating resources for designers and developers. I'll be writing, recording, speaking and consulting. Much of this will be under the heading of my new company Code Contemporary
 featuredImg: /images/uploads/code-contemporary-logo.png
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 It seems that everyone does a post like this: a bold announcement of a new journey. As of this morning, I'm beginning my new journey as an independent creator. 
@@ -18,6 +24,8 @@ The site isn't too much yet, but will eventually house many of the projects I ha
 At the forefront of this is my first course: Practical CSS Grid. If you head over to the [Code Contemporary site](https://codecontemporary.com/) and sign up, you can get **50% off** when the course goes live later this year. The course and demos are written. All that's left is to record the videos and put it out there for the world.
 
 Other than creating new paid courses, I plan on releasing as much free content as I can. To that end, I'll still be posting blog posts to this site, [posting videos on YouTube](https://www.youtube.com/channel/UCTLrD1MTRbjxtFCRaFXqkdQ) and [reinvigigorating my Code Contemporary Newsletter](https://tinyletter.com/code-contemporary). Beyond that, I'll also be live streaming office hours each week.
+
+{% include ad-space.html %}
 
 ## My goal by the numbers
 

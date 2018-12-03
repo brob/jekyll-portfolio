@@ -12,6 +12,12 @@ featuredImg: /images/blog/fluid-grid/featured-grid.png
 featuredLarge: True
 baseLayout: container--right
 updated: 14 Aug, 2018
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 In this tutorial, I'm going to show you how to take one of the most common tropes of web design -- the card grid -- and make it fluid. 
@@ -56,6 +62,8 @@ Place all the .card items inside a .card-container element.
 </section>
 {% endhighlight %}
 </div>
+
+{% include ad-space.html %}
 
 ## Step 2: Visually style your cards
 

@@ -11,6 +11,12 @@ featuredLarge: true
 baseLayout: container--right
 description: In a previous tutorial, I described how to create a simple fluid card grid with CSS Grid. In this tutorial, we'll take it a step farther and create promotional spaces that morph in interesting ways.
 grid-size: large
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 In a previous tutorial, I described [how to create a simple fluid card grid with CSS Grid](/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/). In this tutorial, we'll take it a step further and create promotional spaces that morph in interesting ways.
@@ -27,6 +33,8 @@ To do this, we'll use: 
 *   Well-formed HTML
 *   Grid's ease of overlap
 *   Named Grid Lines and Named Grid Areas
+
+{% include ad-space.html %}
 
 ## The design
 

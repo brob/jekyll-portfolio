@@ -8,6 +8,12 @@ baseLayout: container--right
 description: It struck me recently as I was writing a new Sass mixin that there may be designers and developers out there that haven't translated vanilla CSS into a Sass function. In this article, I want to show how to take often-used CSS and convert it into a DRY (Don't Repeat Yourself) Sass mixin.
 featuredImg: /images/uploads/refactoring-css-to-sass.png
 featuredLarge: true
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid 50% off!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
+  linkText: Sign Up Now
+  linkUrl: https://codecontemporary.com
 ---
 
 ![Graphic refactoring CSS to Sass](/images/uploads/refactoring-css-to-sass-post.png)
@@ -15,6 +21,8 @@ featuredLarge: true
 I've begun live-streaming office hours every week. In my first effort at it, I mostly just worked on this site's code. I decided to create a new promo style for articles and realized I needed to refactor some of my Sass. 
 
 It struck me as I was writing a new Sass mixin that there may be designers and developers out there that haven't translated vanilla CSS into a Sass function. In this article, I want to show how to take often-used CSS and convert it into a DRY (Don't Repeat Yourself) Sass mixin.
+
+{% include ad-space.html %}
 
 ## The Starting CSS
 
