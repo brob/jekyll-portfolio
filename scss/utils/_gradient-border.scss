@@ -1,6 +1,6 @@
-@mixin gradient-border($size: 10px, $gradient-start:#eaee44, $gradient-end: #33d0ff) {
+@mixin gradient-border($size: 10px, $gradient-start:#eaee44, $gradient-end: #33d0ff, $padding: $size*2) {
     position: relative;
-    padding: $size * 2;
+    padding: $padding;
     > * {
         z-index: 100;
         position: relative;

@@ -12,37 +12,41 @@
     }
   </script>
 
-<section class="banner">
 
-    <aside class="banner__headshot"><img src="/images/bryan-and-link.jpg" alt="This is Bryan's Headshot. He's kind of a dweeb."></aside>
+    <img src="/images/bryan-and-link.jpg" class="banner__headshot" alt="This is Bryan's Headshot. He's kind of a dweeb."></aside>
 
-    <main class="banner__copy">
-
+    <h3 class="tagline">Bryan Robinson - HTML, CSS and JS Evangelist</h3>
+        
+    <div class="banner">
         <h1 class="main-headline">{{ page.headline }}</h1>
 
-        <h2 class="secondary-headline">{{ page.subhead }}</h2>
-
         <p>I've been in the industry for over a decade now, and I have learned to embrace my professional passions. That's why I care strongly about new web layout, <a href="http://tinyletter.com/code-contemporary">Contemporary Code</a> and building up the developer and designer communities around me.</p>
+    </div>
 
-    </main>
+    <div class="latest-post">
+        {% for post in site.posts limit:1 %}
+              <h5 class="latest-post__title">Latest Post</h5>
+              <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+              <p>{{ post.description }}</p>
+      
+        {% endfor %}
+    </div>
 
-    <aside class="banner-cta">
-
-        <a href="/blog/" alt="A collection of blog posts" class="banner-cta__button"><span class="text">Writing</span></a>
-        <a href="/office-hours/" alt="Sign up for my office hours" class="banner-cta__button"><span class="text">Office Hours</span></a>
-        <a href="/speaking/" alt="Invite me to speak at your conference" class="banner-cta__button"><span class="text">Speaking</span></a>
-
-    </aside>
-
-</section>
+    <div class="course-promo ad-space">
+        <img class="ad-space__image" src="/images/cc-logo.png" alt="Code Contemporary Logo">
+        <h4 class="ad-space__headline"><a href="https://codecontemporary.com">Practical CSS Grid</a></h4>
+        <p class="ad-space__description">You've heard about CSS Grid layout, but if you haven't gotten started with it, let me walk you through all its features in a simple, practical approach. By the end of this course, you'll understand Grid and have practical examples to put into production right away!
+        </p>
+        <a class="ad-space__button" href="https://codecontemporary.com">Sign Up Now</a>
+    </div>
 
 
 <div class="promo-ad" style="margin: 0 .75rem 1rem;">
 
-  <h4 class="promo-ad__title">Latest Posts</h4> 
+  <h4 class="promo-ad__title">A few more posts</h4> 
     
   <div class="article-posts">
-      {% for post in site.posts limit:3 %}
+      {% for post in site.posts limit:3 offset:1 %}
       
           <div class="related-article">
               <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
@@ -53,5 +57,5 @@
       {% endfor %}
   </div>
 </div>
-
+</div><!-- end body grid from header -->
 {% include footer.html %}
