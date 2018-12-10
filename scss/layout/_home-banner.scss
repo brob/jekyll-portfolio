@@ -64,6 +64,12 @@
             grid-column-start: banner-start;
         }
     }    
+    .site-nav__promo {
+        transform: translateY(0);
+    }
+    .site-nav {
+        align-items: center;
+    }
 }
 
 @media (min-width: 950px) {
