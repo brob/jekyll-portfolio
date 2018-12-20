@@ -201,6 +201,14 @@ Complete thoughts are grouped into sentences. Complete concepts are grouped into
 
 HTML should be readable by anyone coming after you. It should be logical, clean and precise.
 
+## Additional Perks
+
+If you're looking for more reasons to adopt this line of thinking, ponder this. 
+
+There have been lots of movements telling you what to think or write first. [Mobile first](https://www.lukew.com/ff/entry.asp?933). [Resilient design](https://resilientwebdesign.com/). [Support first](https://bryanlrobinson.com/blog/2016/12/17/feature-queries-on-the-rise/).
+
+If you take the time to structure your semantically correct markup properly, you get all of that out of the box. Everything we need the web to be in the future, stems from good HTML.
+
 ## Final Thoughts: Please think
 
 In 2019, as the JavaScript ecosystem continues to build it's momentum, please don't neglect the foundation of the web.
