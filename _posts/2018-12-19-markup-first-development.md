@@ -6,7 +6,7 @@ categories:
   - css
   - html
 baseLayout: container--right
-description: The state of the web in 2018 has been heavy into the world of JavaScript. We've made amazing advancements in the way our sites work. Every site has the ability to feel like an application. Smooth, fast transitions happen between states and pages. It definitely feels like the future of the web. Without HTML, though, our fancy future may have a dystopian layer right beneath the surface.
+description: The state of the web in 2018 has been heavy into the world of JavaScript. We've made amazing advancements in the way our sites work. Every site has the ability to feel like an application. Without HTML, though, our fancy future may have a dystopian layer right beneath the surface.
 featuredImg: /images/uploads/year-of-markup-social.jpg
 featuredLarge: true
 adSpace: 
