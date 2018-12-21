@@ -27,7 +27,7 @@ Without HTML, though, our fancy future may have a dystopian layer right beneath 
 
 ## Why worry about the fate of HTML?
 
-HTML is a simple authoring language. It's declarative, descriptive and easily analyzed. It fits nicely in the "Rule of Least Power" (LINK TO ARTICLE ON LOGROCKET) as described by Tim Berners-Lee.
+HTML is a simple authoring language. It's declarative, descriptive and easily analyzed. It fits nicely in the "[Rule of Least Power](https://blog.logrocket.com/what-the-rule-of-least-power-means-for-modern-developers-b846010a8595)" as described by Tim Berners-Lee.
 
 Let's break the importance of that down a little more.
 
