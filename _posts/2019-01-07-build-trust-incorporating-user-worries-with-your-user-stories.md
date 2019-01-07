@@ -5,7 +5,7 @@ categories:
   - development
   - design
 baseLayout: container--right
-description: The web is suffering from a crisis of trust. Every week there’s a new story posted about a data breach or untrustworthy practices (I’m looking at you, Facebook). How can we fix that? When we create user stories for new features, shouldn’t we also create user _worries_ about them?
+description: The web is suffering from a crisis of trust. Every week there’s a new story posted about a data breach or untrustworthy practices (I’m looking at you, Facebook). How can we fix that? When we create user stories for new features, shouldn’t we also create user worries about them?
 featuredImg: /images/bryan-and-link.jpg
 adSpace: 
   image: /images/cc-logo.png
