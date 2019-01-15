@@ -74,14 +74,6 @@ async function getWebmentions() {
             }
 
             
-            // Write the status to a data file
-            // fs.writeFileSync(webmentionsFile, JSON.stringify(sortedArray, null, 2), function (err) {
-            //     if (err) {
-            //         console.log(err);
-            //     } else {
-            //         console.log("Webmention data saved.");
-            //     }
-            // });
             return bodyArray
 
         } else {
@@ -271,13 +263,13 @@ gulp.task('status:get', function () {
     
 });
 
-gulp.task('webmentions:get', function() {
+gulp.task('webmention:get', function() {
     const webmentions = getWebmentions();
     // console.log(webmentions);
 });
 
 gulp.task('default', function (callback) {
-    runSequence('sass:watch', 'fractal:start', 'status:get', 'image:get', 'serve:jekyll', callback);
+    runSequence('sass:watch', 'fractal:start', 'status:get', 'image:get', 'webmention:get', 'serve:jekyll', callback);
 });
 
 // For just working on styleguide and not running jekyll server
@@ -293,5 +285,5 @@ gulp.task('style:build', function (callback) {
 
 // Master branch deploy builder
 gulp.task('build', function (callback) {
-    runSequence('sass', 'status:get', 'image:get', 'build:jekyll', 'lambda:build', 'img-opt');
+    runSequence('sass', 'status:get', 'image:get', 'webmention:get', 'build:jekyll', 'lambda:build', 'img-opt');
 });
