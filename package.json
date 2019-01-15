@@ -20,5 +20,8 @@
         "netlify-lambda": "^0.4.0",
         "request": "^2.88.0",
         "run-sequence": "2.2.1"
+    },
+    "devDependencies": {
+        "node-fetch": "^2.3.0"
     }
 }

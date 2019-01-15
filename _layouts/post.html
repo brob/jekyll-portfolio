@@ -3,10 +3,24 @@
 <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a6f5f061c5d590013b4dfda&product=inline-share-buttons"></script>
 
 
+{% for mention in site.data.webmentions[page.slug] %}    
+    {% if mention.content %}
+    <div class="mention content">
+        {{ mention.author.name }} on {{ mention.published | date:"%d %b, %Y"  }}
+        <p>{{ mention.content.html }}</p>
+    </div>
+    {% else if mention.like-of %}
+        <div class="mention content">
+            {{ mention.author.name }} liked this around {{ mention.wm-received | date:"%d %b, %Y" }}
+        </div>
+    {% endif %}
+
+{% endfor %}
 
     <main class="article container page-indent {{ page.baseLayout }}">
         <div class="share-this sharethis-inline-share-buttons"></div>
-
+        
+        
         {{ content | markdownify }}
         {% unless page.comments == "off" %}
         <div class="promo-ad">

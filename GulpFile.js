@@ -12,12 +12,86 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     gutil = require('gulp-util'),
     fs = require('fs'),
-    request = require('request');
+    request = require('request'),
+    path = require('path');
+
 fractal.web.set('builder.dest', 'styles'); // destination for the static export
 
 require('dotenv').config();
 
+async function getWebmentions() {
+    const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
 
+
+    const domain = 'bryanlrobinson.com';
+    const token = process.env.WEBMENTION_IO_TOKEN;
+    const url = `${API_ORIGIN}?domain=${domain}&token=${token}`;
+    const webmentionsFolder = './_data/webmentions';
+
+    fs.readdirSync(webmentionsFolder, (err, files) => {
+        if (err) throw err;
+      
+        for (const file of files) {
+          fs.unlink(path.join(directory, file), err => {
+            if (err) throw err;
+          });
+          console.log(`Removed ${file}`);
+        }
+      });
+
+
+    request(url, function (err, response, body) {
+        if (!err && response.statusCode === 200) {
+            const bodyArray = JSON.parse(body).children;
+            const sortedArray = groupBy(bodyArray, function(x) {
+                return x['wm-target']
+            });
+
+
+            function groupBy(coll, f) {
+                return coll.reduce(function(acc, x) {
+                  var k = f(x);
+                  acc[k] = (acc[k] || []).concat(x);
+                  return acc;
+                }, {});
+            };
+            console.log(sortedArray);
+            for (var key in sortedArray) {
+                let noDomain = key.replace('https://bryanlrobinson.com/', '/');
+                let urlSplit = noDomain.split('/');
+                let fileName = urlSplit[urlSplit.length - 2];
+                console.log(fileName);
+                if (fileName.length > 1) {
+                    let filePath = `${webmentionsFolder}/${fileName}.json`;
+                    let content = JSON.stringify(sortedArray[key]);
+                    fs.writeFileSync(filePath, content, (err) => {
+                        if (err) throw err;
+                    
+                        console.log("The file was succesfully saved!");
+                    }); 
+                } 
+
+            }
+
+            
+            // Write the status to a data file
+            // fs.writeFileSync(webmentionsFile, JSON.stringify(sortedArray, null, 2), function (err) {
+            //     if (err) {
+            //         console.log(err);
+            //     } else {
+            //         console.log("Webmention data saved.");
+            //     }
+            // });
+            return bodyArray
+
+        } else {
+            console.log("Couldn't get mentions from webmentions.io");
+        }
+    });
+
+    
+
+}
 
 function download(uri, filename, callback){
     request.head(uri, function(err, res, body){      
@@ -196,6 +270,12 @@ gulp.task('status:get', function () {
     });
     
 });
+
+gulp.task('webmentions:get', function() {
+    const webmentions = getWebmentions();
+    // console.log(webmentions);
+});
+
 gulp.task('default', function (callback) {
     runSequence('sass:watch', 'fractal:start', 'status:get', 'image:get', 'serve:jekyll', callback);
 });
