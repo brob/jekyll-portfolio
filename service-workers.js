@@ -2,7 +2,7 @@
 // http://creativecommons.org/publicdomain/zero/1.0/
 'use strict';
 
-const version = 'v0.1.7::';
+const version = 'v0.1.8::';
 const staticCacheName = version + 'static';
 const pagesCacheName = 'pages';
 const imagesCacheName = 'images';
