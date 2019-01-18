@@ -1,0 +1,10 @@
+.header-promo {
+    margin: $spacing;
+    @include gradient-border(5px);
+
+    &__text {
+        margin: $spacing;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
