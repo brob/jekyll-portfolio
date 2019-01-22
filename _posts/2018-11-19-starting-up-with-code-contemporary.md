@@ -12,7 +12,7 @@ adSpace:
   headline: Practical CSS Grid - Learn about this revolution in Web design!
   description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
   linkText: Start Learning Now!
-  linkUrl: https://codecontemporary.com
+  linkUrl: https://store.codecontemporary.com/practical-css-grid
 ---
 
 It seems that everyone does a post like this: a bold announcement of a new journey. As of this morning, I'm beginning my new journey as an independent creator. 

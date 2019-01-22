@@ -16,7 +16,7 @@ adSpace:
   headline: Practical CSS Grid - Learn about this revolution in Web design!
   description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
   linkText: Start Learning Now!
-  linkUrl: https://codecontemporary.com
+  linkUrl: https://store.codecontemporary.com/practical-css-grid
 ---
 
 Before we get started, I'd like to state for the record: I like JavaScript. There's nothing wrong with using the third language of the browser. It's a great tool for many solutions. But for simple interactions, why complicate matters?

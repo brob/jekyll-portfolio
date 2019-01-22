@@ -15,7 +15,7 @@ adSpace:
   headline: Practical CSS Grid - Learn about this revolution in Web design!
   description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
   linkText: Start Learning Now!
-  linkUrl: https://codecontemporary.com
+  linkUrl: https://store.codecontemporary.com/practical-css-grid
 ---
 
 I've been using Netlify as my host for a while now and have consistently loved the experience. In my time with the service, I haven't been utilizing it much more than a static site host.

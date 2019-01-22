@@ -17,7 +17,7 @@ adSpace:
   headline: Practical CSS Grid - Learn about this revolution in Web design!
   description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
   linkText: Start Learning Now!
-  linkUrl: https://codecontemporary.com
+  linkUrl: https://store.codecontemporary.com/practical-css-grid
 ---
 
 In this tutorial, I'm going to show you how to take one of the most common tropes of web design -- the card grid -- and make it fluid. 
