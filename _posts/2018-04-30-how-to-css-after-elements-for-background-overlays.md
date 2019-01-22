@@ -13,9 +13,9 @@ grid-size: large
 updated: 08 Aug, 2018
 adSpace: 
   image: /images/cc-logo.png
-  headline: Practical CSS Grid 50% off!
-  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below to learn more about my Practical CSS Grid course and get 50% off when it comes out!
-  linkText: Sign Up Now
+  headline: Practical CSS Grid - Learn about this revolution in Web design!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
+  linkText: Start Learning Now!
   linkUrl: https://codecontemporary.com
 ---
 
