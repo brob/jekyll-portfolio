@@ -9,11 +9,10 @@
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
-
     
     &__image {
         grid-row: span 3;
-        max-height: 300px;
+        // max-height: 300px;
         @media (max-width: 768px) {
             max-height: 11rem;
             justify-self: center;
