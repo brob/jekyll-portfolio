@@ -8,9 +8,28 @@ description: I'm still convinced that taking inspiration from punk rock design o
 featuredImg: images/uploads/rotate_skew_unskew.jpg
 featuredLarge: True
 baseLayout: container--right
-updated: 26 Jan, 2018
+updated: 18 Feb, 2019
 featured: true
+adSpace: 
+  image: /images/cc-logo.png
+  headline: Practical CSS Grid - Learn about this revolution in Web design!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power. Sign up below for two hours of practical grid knowledge just for you!
+  linkText: Start Learning Now!
+  linkUrl: https://store.codecontemporary.com/practical-css-grid
 ---
+
+
+<div class="" style="position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; margin-bottom: 1rem;">
+        <iframe style="position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;" width="560" height="315"  src="https://www.youtube.com/embed/NIxlqydrRnc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 In 2018, the web design industry is going to start looking very different. Literally.
 
@@ -19,6 +38,8 @@ With all the tools we're gaining in CSS, designers are going to have new ability
 I'm still convinced that taking inspiration from punk rock design of the 70s and 80s is going to be a trend.
 
 If you want to start small, introduce some angles to your design. This is a simple trick to angle a stripe of content without adding awkward white space.
+
+{% include ad-space.html %}
 
 ## Start with a regular stripe
 
