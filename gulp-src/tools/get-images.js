@@ -1,4 +1,5 @@
 var project = require('../_project.js');
+var getId = require('../_utils').getId;
 var gulp    = require('gulp');
 var fs      = require('fs');
 

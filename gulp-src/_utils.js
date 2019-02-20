@@ -24,7 +24,7 @@ module.exports = {
     },
     buildStatuses: function(body) {
         let data = body.data;
-        let imgId = getId(data.imgUrl);
+        let imgId = module.exports.getId(data.imgUrl);
     
         const status = {
             status: data.doing,

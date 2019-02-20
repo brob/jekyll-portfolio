@@ -18,9 +18,6 @@ fractal.web.set('builder.dest', 'styles'); // destination for the static export
 
 require('dotenv').config();
 
-require('require-dir')('./gulp-src', { recurse: true });
-
-
 
 
 function download(uri, filename, callback){
@@ -67,25 +64,6 @@ gulp.task('fractal:build', function () {
     });
 });
 
-gulp.task('build:jekyll', function () {
-    var shellCommand = 'bundle exec jekyll build';
-
-    return gulp.src('')
-        .pipe(run(shellCommand))
-        .on('error', gutil.log);
-});
-
-
-gulp.task('lambda:build', function () {
-    var shellCommand = "netlify-lambda build lambda_build";
-
-    return gulp.src('')
-        .pipe(run(shellCommand))
-        .on('error', gutil.log);
-});
-
-
-
 
 // For just working on styleguide and not running jekyll server
 gulp.task('style:watch', function (callback) {
@@ -98,7 +76,5 @@ gulp.task('style:build', function (callback) {
     runSequence('sass', 'fractal:build', callback);
 });
 
-// Master branch deploy builder
-gulp.task('build', function (callback) {
-    runSequence('sass', 'status:get', 'image:get', 'build:jekyll', 'lambda:build', 'img-opt');
-});
+
+require('./gulp-src/app');
