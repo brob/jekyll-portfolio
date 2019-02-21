@@ -30,7 +30,7 @@ I'm a fan of semantic, server-rendered HTML, so I had to see how my site would p
 
 ![Image: the code blocks on this site don't show well-formatted code](/images/worldwideweb-codeblock.png)
 
-There are a few exceptions. My code blocks handle formatting with JavaScript -- which wasn't invented yet. All the code examples are gibberish. My "Side Projects" in the footer are just links with images inside. The `<IMG>` tag (caps intended) wasn't proposed until 1993 (3 years later). [Check this site in the browser to see for yourself](https://worldwideweb.cern.ch/browser/#https://bryanlrobinson.com).
+There are a few exceptions. My code blocks handle formatting with JavaScript -- which wasn't invented yet. All the code examples are gibberish. My "Side Projects" in the footer are just links with images inside. The `<IMG>` tag (caps intended) [wasn't proposed until 1993](https://thehistoryoftheweb.com/the-origin-of-the-img-tag/) (3 years later). [Check this site in the browser to see for yourself](https://worldwideweb.cern.ch/browser/#https://bryanlrobinson.com).
 
 If you want to know how well you're writing semantic HTML, see what it looks like in a web browser that understands almost no modern code.
 
