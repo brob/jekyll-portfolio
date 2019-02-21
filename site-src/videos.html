@@ -1,0 +1,19 @@
+---
+title: Videos
+permalink: "/videos/"
+layout: interior
+comments: 'off'
+baseLayout: container--full
+---
+
+<section class="videos">
+
+    {% for video in site.data.videos %}
+    <div class="video">
+        <a href="{{ video.link }}"><img class="video__thumb" src="{{ video.thumbnail }}" alt=""></a>
+
+        <h3 class="video__title"><a href="{{ video.link }}">{{ video.title }}</a></h3>
+    </div>
+    {% endfor %}
+
+</section>

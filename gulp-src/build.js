@@ -5,7 +5,8 @@ var gutil = require('gulp-util');
 var cp = require('child_process');
 
 gulp.task('build:jekyll', function (done) {
-    return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+    cp.spawn("bundle", ["exec", "jekyll", "build", "--source", "site-src"], { stdio: "inherit" });
+    done();
 });
 
 gulp.task('lambda:build', function (done) {

@@ -20,9 +20,12 @@
         "netlify-lambda": "^0.4.0",
         "request": "^2.88.0",
         "require-dir": "^1.2.0",
-        "run-sequence": "2.2.1"
+        "rss-to-json": "^1.0.4",
+        "run-sequence": "2.2.1",
+        "xml2js": "^0.4.19"
     },
     "devDependencies": {
-        "axios": "^0.18.0"
+        "axios": "^0.18.0",
+        "browser-sync": "^2.26.3"
     }
 }
