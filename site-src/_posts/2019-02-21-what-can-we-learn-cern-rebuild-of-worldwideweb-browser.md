@@ -28,7 +28,7 @@ You can read a decent bit about the project over at its site [worldwideweb.cern.
 
 I'm a fan of semantic, server-rendered HTML, so I had to see how my site would perform. I crossed my fingers, launched the browser and pulled up my site. I'm proud to say that this site and my company site ([codecontemporary.com](https://codecontemporary.com)) perform admirably. Both seem to be well structured and surface content in a way that makes sense.
 
-![Image: the code blocks on this site don't show well-formatted code](/imagaes/worldwideweb-codeblock.png)
+![Image: the code blocks on this site don't show well-formatted code](/images/worldwideweb-codeblock.png)
 
 There are a few exceptions. My code blocks handle formatting with JavaScript -- which wasn't invented yet. All the code examples are gibberish. My "Side Projects" in the footer are just links with images inside. The `<IMG>` tag (caps intended) wasn't proposed until 1993 (3 years later). [Check this site in the browser to see for yourself](https://worldwideweb.cern.ch/browser/#https://bryanlrobinson.com).
 
