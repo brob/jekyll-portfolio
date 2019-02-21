@@ -6,10 +6,6 @@ var gulp = require('gulp'),
     fractal = require('./styleguide/fractal.js'),
     logger = fractal.cli.console,
     imagemin = require('gulp-imagemin'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleanCSS = require('gulp-clean-css'),
-    rename = require('gulp-rename'),
-    run = require('gulp-run'),
     runSequence = require('run-sequence'),
     gutil = require('gulp-util'),
     fs = require('fs'),
@@ -41,9 +37,7 @@ gulp.task('img-opt', function () {
 
 
 
-gulp.task('sass:watch', function () {
-    gulp.watch(['scss/**/*.scss', 'scss/*.scss', 'styleguide/components/**/*.scss', 'styleguide/*.scss'], ['sass']);
-});
+
 
 gulp.task('fractal:start', function () {
     const server = fractal.web.server({

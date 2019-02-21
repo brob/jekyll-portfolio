@@ -13,5 +13,5 @@ gulp.task('sass', function () {
         .pipe(autoprefixer({ grid: false }))
         .pipe(cleanCSS())
         .pipe(gulp.dest('./styleguide/public/css/'))
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./site-src/'))
 });
