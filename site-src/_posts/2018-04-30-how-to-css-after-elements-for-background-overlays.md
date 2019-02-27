@@ -13,10 +13,10 @@ grid-size: large
 updated: 08 Aug, 2018
 adSpace: 
   image: /images/cc-logo.png
-  headline: Practical CSS Grid - Learn about this revolution in Web design!
-  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
-  linkText: Start Learning Now!
-  linkUrl: https://store.codecontemporary.com/practical-css-grid
+  headline: Pseudo Power - Using the powerful CSS &#58;&#58;before and &#58;&#58;after pseudo elements
+  description: Pseudo Elements are amazingly versatile, yet a lot of developers don't realize everything they can be used for. Come find out all the different uses for &#58;&#58;before and &#58;&#58;after! Sign up for emails from the course for 50% off!
+  linkText: Get 50% Off Now
+  linkUrl: https://store.codecontemporary.com/pseudo-power-using-the-powerful-css-before-and-after-pseudo-elements
 ---
 
 <aside class="reference">
