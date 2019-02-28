@@ -9,6 +9,12 @@ description: Looking back on the past year, I've identified the five stages of m
 featuredImg: /images/grid-love-featured.jpg
 featuredLarge: True
 baseLayout: container--right
+adSpace: 
+  image: /images/common-grid-promo.jpg
+  headline: Free ebook - Common CSS Grid Patterns
+  description: CSS Grid is a revolution in web layout. With this ebook, I cover 3 design patterns that Grid solves easier, better and more creatively to help push our designs in better directions.
+  linkText: Download Now!
+  linkUrl: https://store.codecontemporary.com/solving-three-design-problems-with-css-grid/buy
 ---
 <figure style="grid-column: 1 / 3; grid-row: 1 / 8;"><img src="/images/grid-love.jpg" alt="Grid Love"></figure>
 
@@ -87,3 +93,5 @@ Of course, there's much more to love in Grid, but these stages feel like how ado
 Yeah... that's how I feel. So much layout power.
 
 How did you learn to love Grid? What are the killer features or workflows that you use?
+
+{% include ad-space.html %}

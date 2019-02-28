@@ -11,6 +11,12 @@ description: >-
   If you're wondering how to start working with CSS Grid, here are three
   strategies for adopting it into your workflow.
 grid-size: large
+adSpace: 
+  image: /images/common-grid-promo.jpg
+  headline: Free ebook - Common CSS Grid Patterns
+  description: CSS Grid is a revolution in web layout. With this ebook, I cover 3 design patterns that Grid solves easier, better and more creatively to help push our designs in better directions.
+  linkText: Download Now!
+  linkUrl: https://store.codecontemporary.com/solving-three-design-problems-with-css-grid/buy
 ---
 CSS Grid Layout has been in major browsers for a little less than a year now. Despite the excitement around it by people in the know, not everyone has jumped on board.
 
@@ -142,3 +148,5 @@ I wrote a blog post on [how to make a fluid grid of cards with no media queries]
 More than anything else, this represents a shift in the way we develop websites. It will require you playing and working in it.
 
 Whatever strategy you implement to learn Grid, start learning it.
+
+{% include ad-space.html %}

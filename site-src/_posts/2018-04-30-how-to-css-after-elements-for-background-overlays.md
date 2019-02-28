@@ -12,11 +12,11 @@ description: Use &#58;after elements to create the simplest HTML possible to ren
 grid-size: large
 updated: 08 Aug, 2018
 adSpace: 
-  image: /images/cc-logo.png
-  headline: Pseudo Power - Using the powerful CSS &#58;&#58;before and &#58;&#58;after pseudo elements
-  description: Pseudo Elements are amazingly versatile, yet a lot of developers don't realize everything they can be used for. Come find out all the different uses for &#58;&#58;before and &#58;&#58;after! Sign up for emails from the course for 50% off!
-  linkText: Get 50% Off Now
-  linkUrl: https://store.codecontemporary.com/pseudo-power-using-the-powerful-css-before-and-after-pseudo-elements
+  image: /images/common-grid-promo.jpg
+  headline: Free ebook - Common CSS Grid Patterns
+  description: CSS Grid is a revolution in web layout. With this ebook, I cover 3 design patterns that Grid solves easier, better and more creatively to help push our designs in better directions.
+  linkText: Download Now!
+  linkUrl: https://store.codecontemporary.com/solving-three-design-problems-with-css-grid/buy
 ---
 
 <aside class="reference">
