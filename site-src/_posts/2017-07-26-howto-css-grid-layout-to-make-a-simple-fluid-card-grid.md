@@ -13,11 +13,11 @@ featuredLarge: True
 baseLayout: container--right
 updated: 14 Aug, 2018
 adSpace: 
-  image: /images/cc-logo.png
-  headline: Practical CSS Grid - Learn about this revolution in Web design!
-  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
-  linkText: Start Learning Now!
-  linkUrl: https://store.codecontemporary.com/practical-css-grid
+  image: /images/common-grid-promo.jpg
+  headline: Free ebook - Common CSS Grid Patterns
+  description: CSS Grid is a revolution in web layout. With this ebook, I cover 3 design patterns that Grid solves easier, better and more creatively to help push our designs in better directions.
+  linkText: Download Now!
+  linkUrl: https://store.codecontemporary.com/solving-three-design-problems-with-css-grid/buy
 ---
 
 In this tutorial, I'm going to show you how to take one of the most common tropes of web design -- the card grid -- and make it fluid. 

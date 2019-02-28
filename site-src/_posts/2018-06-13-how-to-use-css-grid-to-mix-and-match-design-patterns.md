@@ -12,11 +12,11 @@ baseLayout: container--right
 description: In a previous tutorial, I described how to create a simple fluid card grid with CSS Grid. In this tutorial, we'll take it a step farther and create promotional spaces that morph in interesting ways.
 grid-size: large
 adSpace: 
-  image: /images/cc-logo.png
-  headline: Practical CSS Grid - Learn about this revolution in Web design!
-  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power.  Sign up below for two hours of practical grid knowledge just for you!
-  linkText: Start Learning Now!
-  linkUrl: https://store.codecontemporary.com/practical-css-grid
+  image: /images/common-grid-promo.jpg
+  headline: Free ebook - Common CSS Grid Patterns
+  description: CSS Grid is a revolution in web layout. With this ebook, I cover 3 design patterns that Grid solves easier, better and more creatively to help push our designs in better directions.
+  linkText: Download Now!
+  linkUrl: https://store.codecontemporary.com/solving-three-design-problems-with-css-grid/buy
 ---
 
 In a previous tutorial, I described [how to create a simple fluid card grid with CSS Grid](/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/). In this tutorial, we'll take it a step further and create promotional spaces that morph in interesting ways.

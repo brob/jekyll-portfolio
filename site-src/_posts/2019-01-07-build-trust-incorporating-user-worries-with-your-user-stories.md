@@ -8,11 +8,11 @@ baseLayout: container--right
 description: The web is suffering from a crisis of trust. Every week there’s a new story posted about a data breach or untrustworthy practices (I’m looking at you, Facebook). How can we fix that? When we create user stories for new features, shouldn’t we also create user worries about them?
 featuredImg: /images/bryan-and-link.jpg
 adSpace: 
-  image: /images/cc-logo.png
-  headline: Practical CSS Grid - Learn about this revolution in Web design!
-  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power. Sign up below for two hours of practical grid knowledge just for you!
-  linkText: Start Learning Now!
-  linkUrl: https://store.codecontemporary.com/practical-css-grid
+  image: /images/common-grid-promo.jpg
+  headline: Free ebook - Common CSS Grid Patterns
+  description: CSS Grid is a revolution in web layout. With this ebook, I cover 3 design patterns that Grid solves easier, better and more creatively to help push our designs in better directions.
+  linkText: Download Now!
+  linkUrl: https://store.codecontemporary.com/solving-three-design-problems-with-css-grid/buy
 ---
 
 The web is suffering from a crisis of trust. Every week there’s a new story posted about a data breach or untrustworthy practices (I’m looking at you, Facebook).
