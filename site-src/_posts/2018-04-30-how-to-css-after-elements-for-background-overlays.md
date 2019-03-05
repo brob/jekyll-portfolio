@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How To&#58; Use CSS &#58;after pseudo-elements to create simple overlays
+title: Use CSS &#58;&#58;before and &#58;&#58;after for simple, spicy image overlays
 categories:
   - design
   - CSS
@@ -10,7 +10,7 @@ featuredLarge: true
 baseLayout: container--right
 description: Use &#58;after elements to create the simplest HTML possible to render useful and fun overlays on top of background images. Then extend them with blend-modes!
 grid-size: large
-updated: 08 Aug, 2018
+updated: 05 March, 2019
 adSpace: 
   image: /images/common-grid-promo.jpg
   headline: Free ebook - Common CSS Grid Patterns
@@ -155,9 +155,112 @@ Until that time, let's use `@supports` queries to make sure our code still respe
 
 This way in browsers that don't support blend modes, we get our average, but nice overlay and in browsers that do, we get some really neat effects on our banner.
 
+
+## Bonus Step 2: Turn the overlay's design to 11 with ::before and skew!
+
+![Spinal Tap: This goes up to 11 gif](https://media.giphy.com/media/LJ8aM1wbV9Gko/source.gif)
+
+So, we have a full width overlay. Then, we took it even further with blend modes. Can we turn it all the way up to 11?
+
+As it turns out, we can add a _second_ overlay using a `::before` pseudo element, as well.
+
+Starting with the code we have before, we're going to modify our original overlay to be skewed and centered.
+
+Using a CSS transform, we can skew the element a number of degree or turns. In our example, we'll skew it 15 degrees using `transform: skew(15deg)`. You'll notice it now overflows the left and right sides of the container. To fix this, we'll do two things.
+
+First, we'll apply `overflow: hidden` to our banner element. This will guarantee that we never have overflow from any transforms we do on our pseudo elements. Then, we'll adjust the width from 100% down to 75% to contain the element a little better.
+
+![Image of the skew breaking outside the banner area](/images/skew-overlay-issue.jpg)
+
+Those of you with a discerning eye will notice this is a little awkward still. The background isn't centered! Since this is an absolutely positioned item, we'll center it with a simple CSS trick. 
+
+Instead of a `left` value of `0`, we'll use `50%`. That pushes the element over to start it's left edge from the 50% mark of the parent container. We can then use another transform value to pull the element back left: `translateX(-50%)`. When using the translate method, the percentages are based on the width of the element you're applying it to. In this case, it's 50% the width of the `::after` element. This creates a perfectly centered element that is `position: absolute;`. Handy!
+
+Your code should now look like this: 
+
+{% highlight scss %}
+.banner {
+    overflow: hidden;
+}
+
+.banner::after {
+    content: "";  // :before and :after both require content
+    position: absolute;
+    width: 75%; // Makes the overlay smaller to accommodate the skew
+    height: 100%;
+    top: 0;
+    left: 50%; // Push the element 50% of the container's width to the right
+    transform: skew(15deg) // Puts the element on an angle
+               translateX(-50%); // Moves the element 50% of its width back to the left
+    background-image: linear-gradient(120deg,#eaee44,#33d0ff);
+}
+{% endhighlight %}
+
+![Image of the Skew finished on the after element](/images/overlay-skew-finish.jpg)
+
+This itself is a fun take on this design pattern, but we're going to move it one more step.
+
+Let's create an identical pseudo element using `::before`. To do this, we're going to add the selector to our `::after` block.
+
+Your selector should look like this:
+
+{% highlight scss %}
+
+.banner::after, .banner::before {
+    ...
+}
+{% endhighlight %}
+
+This will handle the creation, positioning, and base styles for the element.
+
+Then, we override the specific pieces we need to override. In this case, we'll change our skew.
+
+{% highlight scss %}
+.banner::before {
+    transform: skew(-15deg) 
+               translateX(-50%);
+}
+{% endhighlight %}
+
+When we do this, we also have to redeclare the `translateX` method. This is because we redeclared the whole `transform` property. If we didn't, the browser would assume we don't have a `translateX` for the `::before` due to the cascade. This is fixed in the latest transform specification, giving CSS individual transform properties, but that's not cross-browser compliant yet.
+
+![Finished product of the overlapping overlays](/images/overlay-skew-overlap.jpg)
+
+That's it. We now have two overlays that are creating an interesting geometric view at their intersection!
+
+Here's the final code:
+
+{% highlight scss %}
+.banner::after, .banner::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: skew(15deg)
+               translateX(-50%);
+    width: 75%;
+    height: 100%;
+    background-image: linear-gradient(120deg,#eaee44,#33d0ff);
+    background-color: #333;
+    opacity: .7;
+}
+
+.banner::before {
+    transform: skew(-15deg) 
+               translateX(-50%);
+}
+
+.banner {
+    overflow: hidden;
+}
+{% endhighlight %}
+
 Overlays should be simple and clean and never bloat your HTML with additional markup. This is one of my favorite uses of `::after` elements. It just makes so much sense.
 
-If you want to play with the code in this tutorial, the CodePen is embedded below:
+If you want to play with the code in this tutorial, the CodePens are embedded below:
 
 <iframe height='400' scrolling='no' title='CSS ::after element overlays' src='//codepen.io/brob/embed/bMqBgb/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%; grid-column: 1 / 7'>See the Pen <a href='https://codepen.io/brob/pen/bMqBgb/'>CSS ::after element overlays</a> by Bryan Robinson (<a href='https://codepen.io/brob'>@brob</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<br><br>
+<iframe height='400' scrolling='no' title='CSS ::after element overlays with overlapping overlays' src='//codepen.io/brob/embed/gELMrm?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%; grid-column: 1 / 7'>See the Pen <a href='https://codepen.io/brob/pen/bMqBgb/'>CSS ::after element overlays</a> by Bryan Robinson (<a href='https://codepen.io/brob'>@brob</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
