@@ -1,6 +1,37 @@
-
-.speaking-grid {
+.upcoming {
+    grid-column: 1 / 7;
     grid-row: 1;
+
+}
+.events {
+    width: 100%;
+    max-width: 80ch;
+    margin: 0 0 3rem;
+    td {
+        padding: .5rem 0;
+    }
+}
+@media (max-width: 600px) {
+    .event {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+    .event td {
+        display: block;
+    }
+}
+.event {
+    &__title {
+        margin-bottom: 0;
+    }
+    &__datestamp {
+        font-size: .8em;
+        margin-bottom: 1em;
+        font-style: italic;
+    }
+}
+.speaking-grid {
+    grid-row: 2;
     grid-column: 1 / 5;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -8,7 +39,7 @@
 }
 
 .speaking-contact {
-    grid-row: 1;
+    grid-row: 2;
     grid-column: 5 / 7;
     position: sticky;
     top: 10px;
