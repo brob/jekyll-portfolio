@@ -37,7 +37,7 @@ baseLayout: container--full
 
     <fieldset>
         <legend>What should I present?</legend>
-        {% for presentation in site.presentations %}<label for="{{ presentation.title | slugify }}"><input type="checkbox" name="{{ presentation.title | slugify }}" id="{{ presentation.title | slugify }}" value="{{ presentation.title }}"> {{ presentation.title }}</label> {% endfor %}
+        {% for presentation in site.presentations %}{% if presentation.draft != true %}<label for="{{ presentation.title | slugify }}"><input type="checkbox" name="{{ presentation.title | slugify }}" id="{{ presentation.title | slugify }}" value="{{ presentation.title }}"> {{ presentation.title }}</label>{% endif %} {% endfor %}
         <label for="something-special"><input type="checkbox" name="something-special" id="something-special" value="Special"> Something Special</label>
     </fieldset>
 
@@ -55,13 +55,15 @@ baseLayout: container--full
 
 <main class="speaking-grid">
         {% for presentation in site.presentations reversed %}
-            <article class="stripe item {% cycle  'primary', 'deep', 'neutral', 'neutral' %} container--{% cycle 'right', 'center', 'left' %} {{ presentation.grid-size }}">
+        {% if presentation.draft != true %}
+            <article class="stripe item {% cycle  'primary', 'deep', 'neutral' %} container--{% cycle 'right', 'center', 'left' %} {{ presentation.grid-size }}">
                 <h2><a href="{{ presentation.url }}">{{ presentation.title }}</a></h3>
                 <div class="description">
                     <p>{{ presentation.description }}</p>
                     <a href="{{ presentation.url }}" title="{{ presentation.title }}">Read More &raquo;</a>
                 </div>
             </article>
+            {% endif %}
         {% endfor %}
 </main>
    
