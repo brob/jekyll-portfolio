@@ -28,7 +28,7 @@ adSpace:
 
 I'm grateful for my unique journey to find my professional niche. It's taken a lot of twists and turns. Is my journey replicable in this era of developer tooling and convenience?
 
-In this live vlog, I explored some ideas around the barrier to entry facing non-techies striving to become developers.
+In this live vlog, I explored some ideas around the barrier to entry facing non-techies striving to become developers. Here's a slighly less rambling version of said vlog.
 
 ## My journey to this point
 
