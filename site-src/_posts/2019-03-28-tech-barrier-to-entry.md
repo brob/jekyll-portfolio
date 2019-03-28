@@ -7,7 +7,6 @@ categories:
 baseLayout: container--right
 description: I'm grateful for my unique journey to find my professional niche. It's taken a lot of twists and turns. Is my journey replicable in this era of developer tooling and convenience?
 featuredImg: /images/icons/icon-512x512.png
-featuredLarge: true
 adSpace: 
   image: /images/cc-logo.png
   headline: Practical CSS Grid - Learn about this revolution in Web design!
