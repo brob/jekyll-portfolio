@@ -49,6 +49,8 @@ When the inevitable round of layoff came (this was the newspaper industry after 
 
 Looking at the state of development today, I can't imagine 23-year-old me getting to that point. I was able to make real contributions with _just_ HTML and CSS knowledge.
 
+## What's the cost?
+
 With all the advancements in tooling, if you're not spending some amount of time in command line, chances are good you're not deploying to a production site. If I hadn't had the opportunity to write code that went live professionally, I don't know that treating coding as a hobby would have led me to where I am today.
 
 I wouldn't give up my professional development conveniences and go back to where we were back then. I have to wonder, though, if we're missing new and important voices.
