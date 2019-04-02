@@ -28,6 +28,8 @@ Eleventy handles data a little more flexible than Jekyll. You can store global d
 
 In this example, we want a global set of data, so we'll store it in a `_data` directory.
 
+{% include ad-space.html %}
+
 In Jekyll, you can create JSON files in a data directory to use that data anywhere in your site. 11ty is much the same. It will accept a JSON file no problem.
 
 In my old flow, Gulp would spit the data out into a JSON object in a file that Node.fs would write.
