@@ -65,7 +65,7 @@ To make our GET request, we'll use the NPM package `axios`. It's handy for makin
 
 To bring this into your project, run `npm install --save axios`. Then, require the package at the top of your file.
 
-The axios.get() method expects a URL, so we'll build that with JavaScript's template literals to bring in our environment variables. The Meetup API also lets you specify how many events to return. In this example, I'm returning 20, but this could be adjusted for your needs.
+The `axios.get()` method expects a URL, so we'll build that with JavaScript's template literals to bring in our environment variables. The Meetup API also lets you specify how many events to return. In this example, I'm returning 20, but this could be adjusted for your needs.
 
 {% highlight js %}
 module.exports = async function() {
