@@ -16,15 +16,15 @@ adSpace:
 
 I enjoy building workflows for pure static sites. I enjoy ingesting data into my build process instead of loading my client-side with fetches. 
 
-I've been doing this for a while in Jekyll using Gulp to run a fetch task. After the data is fetched, I can use Node's File System module to write a new data file that Jekyll can parse and put into my templates.
+I've been doing this for a while in [Jekyll](https://jekyllrb.com/) using [Gulp](https://gulpjs.com/) to run a fetch task. After the data is fetched, I can use Node's File System module to write a new data file that Jekyll can parse and put into my templates.
 
-This works. It's served me well. I've been working on converting sites over to 11ty. With this conversion, I get all my favorite JavaScript syntax for fetching data directly in my data files.
+This works. It's served me well. I've been working on converting sites over to [Eleventy](https://11ty.io). With this conversion, I get all my favorite JavaScript syntax for fetching data directly in my data files.
 
 This removes complexity from my Gulp tasks -- which I still use to build and serve my sites. A simpler build will help me to understand these projects when I come back to them after months away.
 
 ## Data Files in Eleventy
 
-Eleventy handles data a little more flexible than Jekyll. You can store global data in your _data directory or store section, page or post data in folders dedicated to those items.
+Eleventy [handles data](https://www.11ty.io/docs/data/) a little more flexible than Jekyll. You can store global data in your _data directory or store section, page or post data in folders dedicated to those items.
 
 In this example, we want a global set of data, so we'll store it in a `_data` directory.
 
