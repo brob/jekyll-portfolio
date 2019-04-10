@@ -128,6 +128,15 @@ In this case, we use grid-gap to keep our margins clean, grid-template-columns t
 .promo:first-child {
     grid-area: main;
 }
+.promo:nth-child(2) {
+    grid-area: second;
+}
+.promo:nth-child(3) {
+    grid-area: third;
+}
+.promo:nth-child(4) {
+    grid-area: fourth;
+}
 {% endhighlight %}
 
 Each promo gets its own named area with the grid-area property and that's it. No more code necessary. This isn't a hack. This isn't the combination of layout tricks with additional markup. This is layout as a first-class citizen of the web.
