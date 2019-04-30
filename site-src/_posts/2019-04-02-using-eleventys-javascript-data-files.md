@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Eleventy's JavaScript Data Files
+title: Using Eleventy's (11ty) JavaScript Data Files
 categories:
   - development
 baseLayout: container--right
@@ -18,17 +18,31 @@ I enjoy building workflows for pure static sites. I enjoy ingesting data into my
 
 I've been doing this for a while in [Jekyll](https://jekyllrb.com/) using [Gulp](https://gulpjs.com/) to run a fetch task. After the data is fetched, I can use Node's File System module to write a new data file that Jekyll can parse and put into my templates.
 
-This works. It's served me well. I've been working on converting sites over to [Eleventy](https://11ty.io). With this conversion, I get all my favorite JavaScript syntax for fetching data directly in my data files.
+This works. It's served me well. I've been working on converting sites over to [Eleventy (11ty)](https://11ty.io). With this conversion, I get all my favorite JavaScript syntax for fetching data directly in my data files.
 
 This removes complexity from my Gulp tasks -- which I still use to build and serve my sites. A simpler build will help me to understand these projects when I come back to them after months away.
+
+#### Want a video version? 
+
+Here's a live tutorial session based on using Eleventy's data files or [skip to the text tutorial](#data-files-in-eleventy).
+
+<figure style="position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; margin-bottom: 1rem;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JpK0G4vQjZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;" allowfullscreen></iframe>
+</figure>
 
 ## Data Files in Eleventy
 
 Eleventy [handles data](https://www.11ty.io/docs/data/) a little more flexible than Jekyll. You can store global data in your _data directory or store section, page or post data in folders dedicated to those items.
 
 In this example, we want a global set of data, so we'll store it in a `_data` directory.
-
-{% include ad-space.html %}
 
 In Jekyll, you can create JSON files in a data directory to use that data anywhere in your site. 11ty is much the same. It will accept a JSON file no problem.
 
@@ -166,3 +180,5 @@ Any API can be consumed this way. It can provide data to your templates. This re
 From here, take these simple examples and remix them! This can be useful for many projects and client requests.
 
 You can see this in action on my [user group skeleton project site](https://netlify-meetup.netlify.com/). [You can view the code here](https://github.com/brob/static-meetup-skeleton).
+
+{% include ad-space.html %}
