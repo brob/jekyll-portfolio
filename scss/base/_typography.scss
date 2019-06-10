@@ -23,7 +23,7 @@
 
 html, body {
     @include primary-font;
-    @include fontSize(16, 24, 320, 1500);
+    @include fontSize(16, 20, 320, 1500);
     line-height: 1.4em;
 }
 
@@ -59,6 +59,10 @@ h2 {
     line-height: 1.4em;
     margin-bottom: calc(.5em + .5vw);
 
+}
+h3 {
+    font-size: 1.25rem;
+    line-height: 1.4em;
 }
 p {
     margin-bottom: 1rem;
