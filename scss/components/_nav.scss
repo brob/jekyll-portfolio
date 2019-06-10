@@ -1,16 +1,22 @@
+.nav-container {
+    display: flex;
+    align-items: center;
+}
 .site-nav {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     flex-direction: column;
     @media (min-width: 630px) {
-        align-items: flex-end;
+        align-items: center;
         flex-direction: row;
 
     }
     &__item {
         font-size: .75rem;
         color: $color-brand;
+        display: flex;
+        align-items: center;
         @media (min-width: 630px) {
             margin: 0 20px;
         }
@@ -34,13 +40,34 @@
             }
         }
     }
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .site-nav__item {
+            margin: 0;
+            @media (max-width: 630px) {
+                justify-content: center;
+                border-bottom: 0;
+                g, path {fill: white;}
+                
+            }
+        }
+        & svg {
+            height: 35px;
+            align-self: center;
+            @media (max-width: 630px) {
+                height: 50px;
+                g, path {fill: white;}
+            }
+        }
+    }
     &__promo {
         background-image: linear-gradient(120deg, #4776e6, #8e54e9);
 
         padding: 5px 15px;
         color: white;
         margin-left: 0;
-        transform: translateY(5px);
         &:hover {
             color: white;
         }
@@ -52,7 +79,7 @@
     .site-nav {
         height: 100%;
         width: 80vw;
-        right: -100vw;
+        right: -85vw;
         top: 0;
         position: fixed;
         flex-direction: column;
