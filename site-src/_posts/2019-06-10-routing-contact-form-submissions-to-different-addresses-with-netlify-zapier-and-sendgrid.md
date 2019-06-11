@@ -4,7 +4,7 @@ title: Routing contact-form emails to different addresses with Netlify, Zapier a
 categories:
   - development
 baseLayout: container--right
-description: In this video series, we'll take a look at what it takes to start with a free HTML template found on Google and convert it for use with a static site generator (SSG). We'll be using my personal favorite SSG 11ty (EleventyJS).
+description: When your client wants dynamic form processing, and your site is "static," what are you going to do? In this article, we'll explore two methods to do dynamic form routing based on a user's answer to a form field.
 featuredImg: /images/netlify-form-twitter.jpg
 featuredLarge: true
 adSpace: 
