@@ -66,7 +66,7 @@ When Netlify builds our site, it will automatically set up basic form processing
 
 If we don't want to mess with writing our own form handler, we can use a service like Zapier to do it for us. No code necessary.
 
-First thing's first, if you don't have a Zapier account, go create one. You can tap into a lot of different services that have APIs using Zapier. It can be a handout beyond just this example.
+First thing's first, if you don't have a Zapier account, go create one. You can tap into a lot of different services that have APIs using Zapier. It can be handy beyond just this example.
 
 Once you're logged in, you'll make your first Zap (the name Zapier gives your mini applications).
 
@@ -112,7 +112,7 @@ We'll do something similar in the next section, but for our own API endpoint!
 
 If you like writing code and want to have full control over what happens in your application, you can create your own form processor.
 
-We'll use Netlify functions to create a Lambda function that will do our emails for us.
+We'll use Netlify Functions to create a Lambda function that will do our emails for us.
 
 To send the emails, we'll need some form of Node.js email API. For this example, we'll use Twilio's SendGrid product. The API is easy to understand and there are loads of examples out there. Bonus: For low-level usage, it's free.
 
@@ -120,7 +120,7 @@ _Aside: Chris Coyier recently wrote an article on CSS Tricks about_ [_sending em
 
 ### Setting Up Our Serverless Function
 
-First, we have to configure our project to use Netlify functions. The easiest way to do this is to set up the project using the Netlify Dev CLI.
+First, we have to configure our project to use Netlify Functions. The easiest way to do this is to set up the project using the Netlify Dev CLI.
 
 Run the following and it will set things up for you:
 
