@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Routing contact form emails to different addresses with Netlify, Zapier and SendGrid
+title: Routing contact-form emails to different addresses with Netlify, Zapier and SendGrid
 categories:
   - development
 baseLayout: container--right
@@ -10,7 +10,7 @@ featuredLarge: true
 adSpace: 
   image: /images/cc-logo.png
   headline: Practical CSS Grid - Learn about this revolution in Web design!
-  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn it's power. Sign up below for two hours of practical grid knowledge just for you!
+  description: Whether you're new to CSS Grid or have played with it, finding practical examples of this new layout mechanism is the best way to learn its power. Sign up below for two hours of practical grid knowledge just for you!
   linkText: Start Learning Now!
   linkUrl: https://store.codecontemporary.com/practical-css-grid
 ---
@@ -19,9 +19,9 @@ adSpace:
 
 I wrote recently that [some developers are wary of jumping on the JAMstack bandwagon due to client expectations](/blog/2019/04/26/client-work-and-the-jamstack/). When your client wants dynamic form processing, and your site is "static," what are you going to do?
 
-In this article, we'll explore two methods to do dynamic form routing based a user's answer to a form field.
+In this article, we'll explore two methods to do dynamic form routing based on a user's answer to a form field.
 
-The simple use case for this code is for when clients want to send an email to different places internally depending on the "department" selected by a user.
+The simple use case for this code is when clients want to send an email to different places internally depending on the "department" selected by a user.
 
 We'll explore two different methods for accomplishing this. One with no code beyond HTML and one with a simple serverless function to handle the form processing.
 
@@ -29,7 +29,7 @@ We'll explore two different methods for accomplishing this. One with no code bey
 
 ![Form image](/images/netlify-form-form.jpg)
 
-Whether we write our form processing ourselves or outsource that to a third party, we need to structure our form.
+Whether we write our form processing ourselves or outsource it to a third party, we need to structure our form.
 
 For this example, we'll assume a simple contact form.
 
@@ -58,43 +58,43 @@ For this example, we'll assume a simple contact form.
 
 This form will capture a few pieces of information from the user: name, email, phone number and a message. The form will also have a `select` field that will allow a user to select a "department" from a dropdown. For ease of processing, we'll allow the value of each `option` to be the email address we want to send the email to.
 
-We turn this form into a form Netlify will recognize by simply adding a `netlify` attribute to the HTML `<form>` element.
+We turn this form into a form that Netlify will recognize by simply adding a `netlify` attribute to the HTML `<form>` element.
 
 When Netlify builds our site, it will automatically set up basic form processing for this form. Handy!
 
-## Setting up a Zap for form routing
+## Setting Up a Zap for Form Routing
 
 If we don't want to mess with writing our own form handler, we can use a service like Zapier to do it for us. No code necessary.
 
-First thing's first, if you don't have a Zapier account, go create one. You can tap into a lot of different services that have APIs using Zapier. It can be handout beyond just this example.
+First thing's first, if you don't have a Zapier account, go create one. You can tap into a lot of different services that have APIs using Zapier. It can be a handout beyond just this example.
 
 Once you're logged in, you'll make your first Zap (the name Zapier gives your mini applications).
 
-Name your Zap and then choose a "Trigger." 
+Name your Zap and then choose a "trigger." 
 
-### Setting up your Zap Trigger
+### Setting Up Your Zap Trigger
 
 ![Zap Trigger](/images/netlify-form-zap-trigger.jpg)
 
-A Trigger allows is what will set your application in motion. In this case, we can use the "Netlify" trigger App. There are various triggers in each App. In our case, we'll use the "New Form Submission" trigger.
+A trigger is what will set your application in motion. In this case, we can use the "Netlify" trigger app. There are various triggers in each app. In our case, we'll use the "New Form Submission" trigger.
 
-On the next screen, you'll be asked to log into your Netlify account. Once authenticated, you can choose which of your Netlify sites to use and which of that site's forms to use.
+On the next screen, you'll be asked to log in to your Netlify account. Once authenticated, you can choose which of your Netlify sites to use and which of that site's forms to use.
 
-You'll be able to select a form submission to base your data on and then move on to building your "Action."
+You'll be able to select a form submission to base your data on and then move on to building your "action."
 
-### Building your Zap's Action
+### Building Your Zap's Action
 
-![Zap Action with email address selected](/images/netlify-form-zap-action.jpg)
+![Zap Action with Email Address Selected](/images/netlify-form-zap-action.jpg)
 
-You can choose from thousands of Apps to handle the next step (even Apps that integrate with CRMs, by the way). For our purposes, we'll use the default "Email" app that Zapier provides.
+You can choose from thousands of apps to handle the next step (even apps that integrate with CRMs). For our purposes, we'll use the default "Email" app that Zapier provides.
 
-You'll choose "Send Outbound Email" as the Action and continue.
+You'll choose "Send Outbound Email" as the action and continue.
 
-Here's where the fun begins. You can specify any data from our form to populate any of the fields in this Action.
+Here's where the fun begins. You can specify any data from our form to populate any of the fields in this action.
 
-The "Subject" field, you can put a generic message (or go back and add a Subject field to your form and populate that).
+In the "Subject" field you can put a generic message (or go back and add a Subject field to your form and populate that).
 
-The "Body" field, I use the "Summary" field that Netlify provides. I like this option because it includes both the name and the message in the field. You can build your own custom HTML to populate this field and include any data your client needs.
+In the "Body" field, I use the "Summary" field that Netlify provides. I like this option because it includes both the name and the message in the field. You can build your own custom HTML to populate this field and include any data your client needs.
 
 For the "Reply To" field, I'll use the "Data Email" field sent from Netlify.
 
@@ -102,25 +102,25 @@ Finally, for our "To" field, I'll use the data provided by the "Data Department"
 
 With all this in place and saved, Zapier will send an email to the department email address any time that contact form is submitted.
 
-### Behind the scenes
+### Behind the Scenes
 
-One interesting thing to note: when you make this connection, Zapier and Netlify are setting up a Webhook behind the scenes. The webhook lives in your Netlify admin panel in your Form settings. Whenever your form gets a submission, Netlify will fire an "Outgoing Webhook" that hits the Zapier API for you.
+One interesting thing to note: when you make this connection, Zapier and Netlify are setting up a webhook behind the scenes. The webhook lives in your Netlify admin panel in your form settings. Whenever your form gets a submission, Netlify will fire an "Outgoing Webhook" that hits the Zapier API for you.
 
 We'll do something similar in the next section, but for our own API endpoint!
 
-## Creating a serverless form processor
+## Creating a Serverless Form Processor
 
 If you like writing code and want to have full control over what happens in your application, you can create your own form processor.
 
-We'll use Netlify Functions to create a Lambda function that will do our emails for us.
+We'll use Netlify functions to create a Lambda function that will do our emails for us.
 
-To send the emails, we'll need some form of Node.js email API. For this example, we'll use Twilio's SendGrid product. The API is easy to understand and there are loads of examples out there. For low-level usage, it's free, which is lovely.
+To send the emails, we'll need some form of Node.js email API. For this example, we'll use Twilio's SendGrid product. The API is easy to understand and there are loads of examples out there. Bonus: For low-level usage, it's free.
 
 _Aside: Chris Coyier recently wrote an article on CSS Tricks about_ [_sending emails from serverless functions_](https://css-tricks.com/netlify-functions-for-sending-emails/)_. In it, he uses SparkPost which looks pretty handy as well._
 
-### Setting up our serverless function
+### Setting Up Our Serverless Function
 
-First, we have to configure our project to use Netlify Functions. The easiest way to do this is to set up the project using the Netlify Dev CLI.
+First, we have to configure our project to use Netlify functions. The easiest way to do this is to set up the project using the Netlify Dev CLI.
 
 Run the following and it will set things up for you:
 
@@ -132,24 +132,24 @@ From there, you can choose the "Hello World" examples and replace the basic exam
 
 We'll continue to use Netlify's basic form functionality. I find the functionality I get out of the box with their forms to be worth it. I'll take spam protection with no code, thank you very much!
 
-### Setting up our email provider: SendGrid
+### Setting Up Our Email Provider: SendGrid
 
-First, set up an account with SendGrid. From there, you'll need an API key for your application. It's best to store this in your Netlify environment variables. Netlify's Dev CLI will sync your environment variables from your account down to your local version.
+First, set up an account with SendGrid. From there, you'll need an API key for your application. It's best to store this in your Netlify environment variables. Netlify's Dev CLI will sync your environment variables from your account to your local version.
 
 Next, we'll need to grab the Node SendGrid package.
 
 {% highlight bash %}npm install --save @sendgrid/mail{% endhighlight %}
 
-In our `contact-route.js` function, we'll need to include the SendGrid package an initialize the script with our API key.
+In our `contact-route.js` function, we'll need to include the SendGrid package and initialize the script with our API key.
 
 {% highlight js %}
 const sgMail = require('@sendgrid/mail');  
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 {% endhighlight %}
 
-### Parse the form submission
+### Parse the Form Submission
 
-Inside of our handler function, we'll want to parse the form data in a way that will make sense for SendGrid to use.
+Inside our handler function, we'll want to parse the form data in a way that will make sense for SendGrid to use.
 
 Netlify's form webhook will send us the data as the event's body. We'll need to turn that data into JSON.
 
@@ -210,11 +210,11 @@ const msg = {
 {% endhighlight %}
 
 
-### Set up the outgoing webhook in Netlify
+### Setting Up the Outgoing Webhook in Netlify
 
 In our Zapier example, our third-party application set up our webhook for us. In our custom example, we'll need to go into our Netlify admin and add an outgoing webhook to the form.
 
-The settings for this exist in Settings > Forms > Notifications. You can choose "Outgoing webhook." The URL to notify will be the final URL for your serverless function and the form will be the form name for this specific form.
+The settings for this exist in Settings > Forms > Notifications. You can choose "Outgoing Webhook." The URL to notify will be the final URL for your serverless function and the form will be the form name for this specific form.
 
 Finally, the emails are sending and finding their way to our inboxes. Here's what the SendGrid example looks like. The formatted HTML makes a big difference!
 
@@ -222,10 +222,10 @@ Finally, the emails are sending and finding their way to our inboxes. Here's wha
 
 ## Conclusion: Form routing is a breeze with Netlify, Zapier and SendGrid
 
-As it turns out, we can do almost anything a client could ask with the JAMstack. 
+As it turns out, we can do almost anything a client could ask for with the JAMstack. 
 
-Both of these examples take less than two hours to build out and can be extended to do even more powerful things. Don't be fooled into thinking that static sites can't do amazing things. 
+Both of these examples take less than two hours to build out and can be extended to do even more amazing things. Don't be fooled into thinking that static sites can't be powerful.
 
-I continue to hope that people use these technologies more and more in client work. I find that it makes projects much easier to come back to, since they're all written in HTML, CSS and JS.
+I hope that people use these technologies more and more in client work. I find that it makes projects much easier to come back to, since they're all written in HTML, CSS and JS.
 
 What could you do with a combination of Netlify and Zapier or SendGrid?
