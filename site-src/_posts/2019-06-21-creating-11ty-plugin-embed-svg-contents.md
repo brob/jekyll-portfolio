@@ -18,7 +18,7 @@ adSpace:
 
 ![11ty Plugin banner image where a plug is coming out of the 11ty logo](/images/eleventy-plugin-banner@2x.jpg)
 
-It's well documented that I love static sites. It's also well documented, that I'm a fan of the JavaScript static site generator [11ty (Eleventy)](https://11ty.io). In the sites I've built with it recently, I've found myself reusing a couple filters. This has involved me copying and pasting the code a lot. The solution? Create an 11ty Plugin.
+It's [well documented](/blog/2019/06/10/routing-contact-form-submissions-to-different-addresses-with-netlify-zapier-and-sendgrid/) that [I love the JAMstack](/blog/2019/04/26/client-work-and-the-jamstack/). It's also [well documented](/blog/2019/05/31/create-11ty-theme-from-static-html-template/), that I'm a fan of the JavaScript static site generator [11ty (Eleventy)](https://11ty.io). In the sites I've built with it recently, I've found myself reusing a couple filters. This has involved me copying and pasting the code a lot. The solution? Create an 11ty Plugin.
 
 I honestly thought this was a relatively new feature, but it turns out, it's been around since v0.2.13! Look at that pie on my face!
 
