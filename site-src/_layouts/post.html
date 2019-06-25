@@ -3,11 +3,13 @@
 <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a6f5f061c5d590013b4dfda&product=inline-share-buttons"></script>
 
 
-
     <main class="article container page-indent {{ page.baseLayout }}">
-        <div class="share-this sharethis-inline-share-buttons"></div>
+        {% include author.html %}
 
         {{ content | markdownify }}
+
+        <div class="share-this sharethis-inline-share-buttons"></div>
+
         {% unless page.comments == "off" %}
         <div class="promo-ad">
 
