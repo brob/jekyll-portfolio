@@ -54,21 +54,24 @@ A colored stripe, with a width-restricted set of content with no additional mark
 {% highlight html %}
 <section class="stripe">
     <h1>Hello Stripe world</h1>
-    <p>More stripe content can go here! More stripe content can go here! More stripe content can go here! More stripe content can go here! More stripe content can go here! More stripe content can go here! More stripe content can go here! More stripe content can go here!</p>
+    <p>More stripe content can go here ...</p>
 </section>
 {% endhighlight %}
 
 {% highlight css %}
 .stripe {
-    background-color: lavender;
-
     display: grid;
     grid-template-columns: minmax(auto, 1200px);
     justify-content: center;
 
+    background-color: lavender;
     padding: 2rem 1rem;
 }
 {% endhighlight %}
+
+This method creates one column for our grid. It has a minumum size of `auto` to allow it to shrink based on its content and a maximum size of 1200px. This creates the appropriately sized elements. We use `justify-content` instead of dealing with `auto` margins. In this method, we need a left/right padding for our mobile widths.
+
+From a box-model perspective, this makes good sense. Padding is for internal spacing. In our old way, we're using margins which has always felt a little hacky.
 
 I never thought about this use case, but it made so much sense when it dawned on me. As we approach a future where Grid is one of our main layout mechanisms, we'll see more applications like this.
 

@@ -4,11 +4,12 @@
 
 
     <main class="article container page-indent {{ page.baseLayout }}">
+        <div class="share-this sharethis-inline-share-buttons"></div>
+
 
         {{ content | markdownify }}
 
 
-        <div class="share-this sharethis-inline-share-buttons"></div>
 
         {% unless page.comments == "off" %}
         <div class="promo-ad">
