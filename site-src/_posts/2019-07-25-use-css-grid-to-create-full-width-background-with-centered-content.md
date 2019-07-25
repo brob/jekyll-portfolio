@@ -17,7 +17,7 @@ adSpace:
 
 ![Self Centering Grid with firefox grid inspector lines showing one column centered](/images/self-center-grid.png)
 
-Sometimes an idea strikes you so hard that you have no idea why you've never thought of it. CSS Grid excels at creating new types of layouts. It's also amazing at simplifying the code for old design patterns.
+Sometimes an idea strikes you so hard that you have no idea why you've never thought of it. CSS Grid excels at [creating new types of layouts](/blog/2019/04/10/grid-vs-flex-tale-of-simple-promo-space/). It's also amazing at simplifying the code for old design patterns.
 
 An idea snuck up on me when I was creating a centered column of text inside of a stripe with a full width background color.
 
